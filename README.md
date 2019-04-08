@@ -13,12 +13,16 @@
   * [Assignment]()
 
 ## week 6
-* week 6 - 1 (4.8 월)
+* week 6 - 1 (4.9 월)
 
 
 
 ## iOS
 
+* Delegate Pattern
+
 ## Swift Language
+
+* Closure[<https://github.com/changSic/Task/wiki/Closures>]
 
 
