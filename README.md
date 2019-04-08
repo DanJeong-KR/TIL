@@ -14,7 +14,7 @@
     * <img width="1183" alt="스크린샷 2019-04-08 오후 3 04 32" src="https://user-images.githubusercontent.com/38423205/55704573-69f62f00-5a17-11e9-85a2-f35e9e42b9aa.png">
 
 
-* [구글 검색 특징](https://github.com/changSic/Task/wiki/%EA%B5%AC%EA%B8%80-%EA%B2%80%EC%83%89-%ED%8A%B9%EC%A7%95)
+* [구글 검색 특징 - 검색에 [keyword]로 제약조건 걸기.](https://github.com/changSic/Task/wiki/%EA%B5%AC%EA%B8%80-%EA%B2%80%EC%83%89-%ED%8A%B9%EC%A7%95)
 
 ## week 5
 
