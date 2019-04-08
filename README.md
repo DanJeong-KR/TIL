@@ -11,7 +11,7 @@
     * mv : 이동
     * rm : 삭제
   * vi : 텍스트 에디터 실행
-    * ![스크린샷 2019-04-08 오후 3.04.32](/Users/changsicjung/Desktop/Task/assets/스크린샷 2019-04-08 오후 3.04.32.png)
+    * <img width="1183" alt="스크린샷 2019-04-08 오후 3 04 32" src="https://user-images.githubusercontent.com/38423205/55704573-69f62f00-5a17-11e9-85a2-f35e9e42b9aa.png">
 
 
 * 구글 검색 특징
