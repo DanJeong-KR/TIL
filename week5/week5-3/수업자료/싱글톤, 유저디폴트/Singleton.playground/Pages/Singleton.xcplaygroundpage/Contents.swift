@@ -96,45 +96,4 @@ singleton2.x  //
  ***************************************************/
 
 
-class Singleton {
-  static let shared = Singleton()
-  var x = 0
-}
 
-let object1 = Singleton.shared
-
-
-// 여전히 새로운 객체를 만들고 다른 객체에 접근 가능
-
-let object2 = Singleton()
-object1.x = 10
-object2.x = 20
-
-object1.x
-object2.x
-
-
-/***************************************************
- 외부에서 인스턴스를 직접 생성하지 못하도록 강제해야 할 경우 생성자를 private 으로 선언
- 단, 일부러 새로운 것을 만들어서 쓸 수 있는 여지를 주고 싶은 경우는 무관
- ***************************************************/
-
-class PrivateSingleton {
-  static let shared = PrivateSingleton()
-  private init() {} // init 에 private 으로 외부에서 초기화 못시키게 함으로써 싱글톤을 구현!
-  var x = 1
-}
-
-//let uniqueSingleton = PrivateSingleton.init()
-let uniqueSingleton1 = PrivateSingleton.shared
-let uniqueSingleton2 = PrivateSingleton.shared
-uniqueSingleton1.x
-uniqueSingleton2.x
-
-uniqueSingleton1.x = 20
-
-uniqueSingleton1.x
-uniqueSingleton2.x
-
-
-//: [Next](@next)

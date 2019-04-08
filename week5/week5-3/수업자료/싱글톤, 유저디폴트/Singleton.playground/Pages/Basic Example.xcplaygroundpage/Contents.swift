@@ -42,7 +42,9 @@ var friendList = FriendList()
 friendList.addFriend(name: "원빈")
 friendList.addFriend(name: "장동건")
 friendList.addFriend(name: "정우성")
-User.shared.friends
+//User.shared.friends
+let user = User()
+
 
 
 var blockList = BlockList()
