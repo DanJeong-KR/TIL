@@ -5,7 +5,7 @@
 
 * Swift 로 작성된 iOS Resources [IOS Example](https://iosexample.com/)
 * 앱 아이콘 만들기 [makeappicon](https://makeappicon.com)
-* [주니어 개발자 채용정보](https://github.com/changSic/junior-recruit-scheduler)
+* [주니어 개발자 채용정보](<https://github.com/jojoldu/junior-recruit-scheduler>)
 
 ## week 5
 
