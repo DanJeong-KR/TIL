@@ -6,16 +6,15 @@
 * 앱 아이콘 만들기 [makeappicon](https://makeappicon.com)
 * [주니어 개발자 채용정보](<https://github.com/jojoldu/junior-recruit-scheduler>)
 
-## week 5
+## week 5 ( 4월 2일 합류 )
 
 * week 5 - 3 (4.2 화)
-  * week 5 - 3 Type 에 대해서](https://github.com/changSic/Task/blob/master/week%205/week%205%20-%201.md)
   * [Assignment]()
 * week 5 - 4 (4.4 목)
   * [Assignment]()
 
 ## week 6
-* week 6 - 1 (4.9 월)
+* AutoLayout (4.10 화)
 
 
 
