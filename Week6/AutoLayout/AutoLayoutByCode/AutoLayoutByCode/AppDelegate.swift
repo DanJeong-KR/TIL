@@ -23,6 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.backgroundColor = .white
     window?.rootViewController = ViewController()
-    window?.makeKeyAndVisible()
+    window?.makeKeyAndVisible() // key window 로 만드는 과정
   }
 }

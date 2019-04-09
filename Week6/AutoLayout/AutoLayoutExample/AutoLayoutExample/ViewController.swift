@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     
     // 화면이 돌아갈 때마다 호출 되는 메소드?
     // viewWillAppear -> viewWillLayoutSubviews -> viewDidLayoutSubviews -> viewDidAppear
-    // viewWillLayoutSubviews 부터 safeAreaInset 프로퍼티 사용가능
-    // 정확히 말하면 ViewSafeAreaInsetsDisChanged () 에서
+    // viewWillLayoutSubviews 에서 safeAreaInset 프로퍼티 사용가능
+    // 정확히 말하면 viewWillLayoutSubviews 전에 ViewSafeAreaInsetsDisChanged () 부터 사용가능 한 것.
     override func viewWillLayoutSubviews() {
 //        print(view.safeAreaInsets.left)
 //        print(view.safeAreaInsets.right)
