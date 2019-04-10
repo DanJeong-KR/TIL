@@ -12,12 +12,20 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var btAlert: UIButton!
     
+    var test = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         btAlert.layer.cornerRadius = 5
         btAlert.addTarget(self, action: #selector(btAction(_:)), for: .touchUpInside)
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(test)
+    }
+    
     
     @objc func btAction(_ sender: Any?) {
         

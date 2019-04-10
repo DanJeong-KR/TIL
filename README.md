@@ -15,6 +15,7 @@
 
 ## week 6
 * AutoLayout (4.10 화)
+  * [Assignment](<https://github.com/changSic/Task/tree/master/Week6/AutoLayout/Assignment>)
 
 
 

@@ -35,9 +35,16 @@ class SecondViewController: UIViewController {
     }
     
     @objc func yellowAction(_ sender: Any) {
-        //guard let firstVC = storyboard?.instantiateViewController(withIdentifier: "FirstVC") as? FirstViewController else {print("dd");return}
-        guard let firstVC = presentingViewController as? FirstViewController else { return }
+        //guard let firstVC = storyboard?.instantiateViewController(withIdentifier: "FirstVC") as? FirstViewController else {return}
+        // 새로운 UIViewController 객체를 생성한 것이기 때문에 dismiss 로는 표현할 수 없다. present 로 표현해야 한다.
+        
+        let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC")
+        //guard let firstVC = presentingViewController as? FirstViewController else { return }
         firstVC.view.backgroundColor = .yellow
+        present(firstVC, animated: true)
+        
+        
+        
     }
     
     @objc func WhiteAction(_ sender: Any) {
