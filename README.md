@@ -24,8 +24,8 @@
 * [Git 과 Mac Terminal 명령어 정리.](<https://github.com/changSic/Task/wiki/Git-%EA%B3%BC-Mac-Terminal-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC.>)
 * Delegate Pattern
 * [Singleton Pattern](<https://github.com/changSic/Task/wiki/Singleton>)
-* [FrameAndBound](<https://github.com/changSic/Task/wiki/AutoLayout>)
-* [AutoLayout](<https://github.com/changSic/Task/wiki/FrameAndBound>)
+* [FrameAndBound](<https://github.com/changSic/Task/wiki/FrameAndBound>)
+* [AutoLayout](<https://github.com/changSic/Task/wiki/AutoLayout>)
 * [코드로 구현하는 AutoLayout](<https://github.com/changSic/Task/wiki/%EC%BD%94%EB%93%9C%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-AutoLayout>)
 
 ## Swift Language Study
