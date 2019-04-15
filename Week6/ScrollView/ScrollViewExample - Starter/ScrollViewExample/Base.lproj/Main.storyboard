@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PM-Ow-iDD">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="최소 배율" id="yMA-Wr-lc0">
+                                        <connections>
+                                            <action selector="fitToWidth:" destination="BYZ-38-t0r" id="IJb-OX-E27"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="2배 확대" id="jbl-bC-3On">
+                                        <connections>
+                                            <action selector="scaleDouble:" destination="BYZ-38-t0r" id="hU8-Uk-6Lt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="컨텐츠 이동" id="bPD-Wk-GDj">
+                                        <connections>
+                                            <action selector="moveContentToRight:" destination="BYZ-38-t0r" id="Xpc-eo-xKJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.10000000000000001" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="XHy-8J-gJN">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="fqx-wu-SB5">
+                                        <rect key="frame" x="0.0" y="0.0" width="1800" height="1200"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fqx-wu-SB5" firstAttribute="leading" secondItem="XHy-8J-gJN" secondAttribute="leading" id="Ta6-1E-cHT"/>
+                                    <constraint firstAttribute="bottom" secondItem="fqx-wu-SB5" secondAttribute="bottom" id="aPZ-FV-odJ"/>
+                                    <constraint firstItem="fqx-wu-SB5" firstAttribute="top" secondItem="XHy-8J-gJN" secondAttribute="top" id="hmI-8I-8Vo"/>
+                                    <constraint firstAttribute="trailing" secondItem="fqx-wu-SB5" secondAttribute="trailing" id="tEB-fa-VCm"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XHy-8J-gJN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6gn-WY-ilq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XHy-8J-gJN" secondAttribute="trailing" id="IfW-T1-b8e"/>
+                            <constraint firstItem="2PM-Ow-iDD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Oz8-pv-rI8"/>
+                            <constraint firstItem="XHy-8J-gJN" firstAttribute="top" secondItem="2PM-Ow-iDD" secondAttribute="bottom" id="QqX-mb-Ox0"/>
+                            <constraint firstItem="2PM-Ow-iDD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e4n-gS-ulh"/>
+                            <constraint firstItem="2PM-Ow-iDD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fzY-65-YhE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XHy-8J-gJN" secondAttribute="bottom" id="oco-6K-WLh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="fqx-wu-SB5" id="nVB-VR-ChG"/>
+                        <outlet property="scrollView" destination="XHy-8J-gJN" id="4eF-Ip-Zba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.59999999999999" y="-96.059113300492612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dog" width="1800" height="1200"/>
+    </resources>
+</document>
