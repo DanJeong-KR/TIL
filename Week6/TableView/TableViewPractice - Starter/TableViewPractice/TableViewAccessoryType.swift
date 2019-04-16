@@ -29,13 +29,25 @@ final class TableViewAccessoryType: UIViewController {
     "guinea_pig", "koala", "whale_shark", "whale", "duck",
     "seagull", "black_swan", "peacock", "giraffe"
   ]
+    var selectedInfo:[Bool] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     let tableView = UITableView(frame: view.frame)
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+    
     view.addSubview(tableView)
     
+    for _ in 1...animals.count {
+        selectedInfo.append(false)
+    }
+    
     tableView.rowHeight = 80
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellId")
+    tableView.allowsMultipleSelection = true
   }
 }
 
@@ -47,6 +59,40 @@ extension TableViewAccessoryType: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath)
+    
+    cell.textLabel?.text = animals[indexPath.row]
+    cell.imageView?.image = UIImage(named: animals[indexPath.row])
+    
+    // 셀을 재사용 할 때 체크된 것인지 아닌지 검사하기.
+    
+    if selectedInfo[indexPath.row] {
+        cell.accessoryType = .checkmark
+    }else {
+        cell.accessoryType = .none
+    }
+    
     return cell
   }
 }
+
+
+extension TableViewAccessoryType: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .checkmark
+        
+        selectedInfo[indexPath.row] = true
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .none
+        
+        selectedInfo[indexPath.row] = false
+    }
+    
+}
+
+

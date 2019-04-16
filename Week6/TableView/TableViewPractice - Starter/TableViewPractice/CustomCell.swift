@@ -13,16 +13,20 @@ class CustomCell: UITableViewCell {
         "seagull", "black_swan", "peacock", "giraffe"
     ]
     
+    //let button = UIButton()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        tag += 1
+        
+        //contentView.addSubview(button)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        fatalError()
     }
     
     override func layoutSubviews() {
-        self.
     }
 }
