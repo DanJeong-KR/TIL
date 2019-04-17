@@ -22,7 +22,8 @@ final class TableViewAccessoryType: UIViewController {
   override var description: String {
     return "Task 2 - AccessoryType"
   }
-  
+  //--------------------- 데이터 모델 ------------------------------
+    
   let animals = [
     "bear", "buffalo", "camel", "dog", "elephant",
     "koala", "llama", "panda", "lion", "horse",
@@ -30,6 +31,8 @@ final class TableViewAccessoryType: UIViewController {
     "seagull", "black_swan", "peacock", "giraffe"
   ]
     var selectedInfo:[Bool] = []
+    
+    //--------------------- 데이터 모델 -----------------------------
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -63,14 +66,14 @@ extension TableViewAccessoryType: UITableViewDataSource {
     cell.textLabel?.text = animals[indexPath.row]
     cell.imageView?.image = UIImage(named: animals[indexPath.row])
     
-    // 셀을 재사용 할 때 체크된 것인지 아닌지 검사하기.
     
+    // 셀을 재사용 할 때 체크된 상태에 따라 다시 설정해주기.
     if selectedInfo[indexPath.row] {
         cell.accessoryType = .checkmark
     }else {
         cell.accessoryType = .none
     }
-    
+//
     return cell
   }
 }
