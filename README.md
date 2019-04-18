@@ -19,6 +19,9 @@
 * week 5 - 4 (4.4 목)
   * [Assignment]()
 
-#### week 6
+#### [week 6](https://github.com/changSic/Task/tree/master/Week6)
 * AutoLayout (4.10 화)
-  * [Assignment](<https://github.com/changSic/Task/tree/master/Week6/AutoLayout/Assignment>)
+* Initializer
+* ScrollView
+* TableView
+* ARC
