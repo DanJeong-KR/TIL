@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='Contents'/>
+        <page name='ARC Basic'/>
+        <page name='Scope'/>
+        <page name='Strong Reference Cycles'/>
+        <page name='Strong, Unowned, Weak'/>
+        <page name='Practice'/>
+    </pages>
+</playground>
