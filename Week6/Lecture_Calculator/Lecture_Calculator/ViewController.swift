@@ -84,31 +84,42 @@ class ViewController: UIViewController {
     @objc func operationAction(sender: UIButton) {
         switch sender.tag {
         case 1:
-//            print("+ 버튼")
-//            print("원래 왼쪾에 있던 값",CalData.shared.leftOperand)
-            // 왼쪾 연산자에 = 원래 왼쪽 연산자에 있던 값 + 현재 입력값
-            let intLeft = Int(CalData.shared.leftOperand) ?? 0
-            let intCurrent = Int(CalData.shared.currentValue) ?? 0
-            
-//            print("왼쪽",intLeft)
-//            print("현재값",intCurrent)
-            CalData.shared.resultValue = intLeft + intCurrent
-            CalData.shared.leftOperand = String(intLeft + intCurrent)
-            
-//            displayLabel.text = CalData.shared.leftOperand
-//
-//            // 현재값 초기화 시켜주고 (디스플레이 에 빈 상태로 시작해야함 그래서 0 이 아님.)
-//            CalData.shared.currentValue = ""
-            resultButtonWork()
+//            CalData.shared.buttonInfo = sender.tag
+          print("+ 버튼")
+////            print("원래 왼쪾에 있던 값",CalData.shared.leftOperand)
+//            // 왼쪾 연산자에 = 원래 왼쪽 연산자에 있던 값 + 현재 입력값
+//            let intLeft = Int(CalData.shared.leftOperand) ?? 0
+//            let intCurrent = Int(CalData.shared.currentValue) ?? 0
+//            
+////            print("왼쪽",intLeft)
+////            print("현재값",intCurrent)
+//            CalData.shared.resultValue = intLeft + intCurrent
+//            CalData.shared.leftOperand = String(intLeft + intCurrent)
+//            
+////            displayLabel.text = CalData.shared.leftOperand
+////
+////            // 현재값 초기화 시켜주고 (디스플레이 에 빈 상태로 시작해야함 그래서 0 이 아님.)
+////            CalData.shared.currentValue = ""
+//            resultButtonWork()
             
         case 2:
+            // 버튼 정보 데이터로 보내고
             print("-버튼")
-            let intLeft = Int(CalData.shared.leftOperand) ?? 0
-            let intCurrent = Int(CalData.shared.currentValue) ?? 0
-            print("왼쪽값",CalData.shared.leftOperand,"/ 현재값",CalData.shared.currentValue)
-            CalData.shared.resultValue = intLeft - intCurrent
-            CalData.shared.leftOperand = String(intLeft - intCurrent)
-            resultButtonWork()
+            CalData.shared.buttonCount += 1
+            CalData.shared.buttonInfo = "minus"
+            
+            let intCurrent = Int(CalData.shared.currentValue!) ?? 0
+            CalData.shared.rightOperand = String(intCurrent)
+            
+            if CalData.shared.buttonCount <= 1 {
+                displayLabel.text = CalData.shared.currentValue!
+                CalData.shared.currentValue = ""
+            } else {
+                displayLabel.text = "\(CalData.shared.resultValue ?? 0)"
+                CalData.shared.currentValue = ""
+            }
+            print("왼쪽값",CalData.shared.leftOperand,"/ 오른쪽값",CalData.shared.rightOperand)
+            //resultButtonWork()
         case 3:
             print("* 버튼")
         case 4:
@@ -116,8 +127,12 @@ class ViewController: UIViewController {
         case 5:
             print("clear 버튼")
             CalData.shared.currentValue = ""
+            CalData.shared.rightOperand = "0"
             CalData.shared.leftOperand = "0"
             CalData.shared.resultValue = 0
+            CalData.shared.buttonInfo = ""
+            CalData.shared.buttonCount = 0
+            
             displayLabel.text = ""
         case 6:
             print("= 버튼")
@@ -163,18 +178,23 @@ class ViewController: UIViewController {
     // 숫자버튼 누르면 현재 값에 값을 저장하고 라벨에 표시한다.
     func numberButton(sender: UIButton) {
         
-        CalData.shared.currentValue.append("\(sender.tag)")
+        CalData.shared.currentValue!.append("\(sender.tag)")
         displayLabel.text = CalData.shared.currentValue
         print("왼쪽값",CalData.shared.leftOperand,"/ 현재값",CalData.shared.currentValue)
     }
     
     func resultButtonWork() {
         
-        //디스플레이에 표시하고
-        displayLabel.text = "\(CalData.shared.resultValue ?? 0)"
         
-        // 현재값 초기화 시켜주고 (디스플레이 에 빈 상태로 시작해야함 그래서 0 이 아님.)
-        CalData.shared.currentValue = ""
+        if CalData.shared.buttonCount > 0 {
+            //디스플레이에 표시하고
+            displayLabel.text = "\(CalData.shared.resultValue ?? 0)"
+            
+            // 현재값 초기화 시켜주고 (디스플레이 에 빈 상태로 시작해야함 그래서 0 이 아님.)
+            CalData.shared.currentValue = ""
+        } else {
+            displayLabel.text = CalData.shared.rightOperand
+        }
         
     }
 }
