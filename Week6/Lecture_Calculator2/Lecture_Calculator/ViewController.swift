@@ -43,9 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setupTagAndAction()
-        
     }
     // ----------------------------------------------------------
     
@@ -82,70 +80,46 @@ class ViewController: UIViewController {
     
     // MARK: - 사칙연산 버튼 액션메소드
     @objc func operationAction(sender: UIButton) {
+        
+        calData.isButtonFirst = true
+        
         switch sender.titleLabel?.text! {
-        // MARK: - + 버튼 액션
         case "+":
-            print("+ 버튼")
-            // 첫번째 연산자 눌렀을 때 디스플레이 표시 로직
             if calData.leftOperand == nil {
-                calData.leftOperand = Double(self.displayLabel.text!)!
-            }else {
-                calData.leftOperand = calData.calculateValue
-                calData.rightOperand = Double(self.displayLabel.text!)!
-            }
+                calData.leftOperand = Double(displayLabel.text!)!
+            } else { calData.rightOperand = Double(displayLabel.text!)! }
             
-            print("leftOperand :",calData.leftOperand," / rightOperand :",calData.rightOperand, " / calculate Value :",calData.calculateValue )
-            
-        // MARK: - - 버튼 액션
         case "−":
-            print("-버튼")
-            
             if calData.leftOperand == nil {
-                calData.leftOperand = Double(self.displayLabel.text!)!
-            }else {
-                calData.leftOperand = calData.calculateValue
-                calData.rightOperand = Double(self.displayLabel.text!)!
-            }
-            print("leftOperand :",calData.leftOperand," / rightOperand :",calData.rightOperand, " / calculate Value :",calData.calculateValue )
-            
-        // MARK: - × 버튼 액션
+                calData.leftOperand = Double(displayLabel.text!)!
+            } else { calData.rightOperand = Double(displayLabel.text!)! }
         case "×":
-            print("* 버튼")
+            print("×")
             if calData.leftOperand == nil {
-                calData.leftOperand = Double(self.displayLabel.text!)!
+                calData.leftOperand = Double(displayLabel.text!)!
                 calData.rightOperand = 1
-            }else {
-                calData.leftOperand = calData.calculateValue
-                calData.rightOperand = Double(self.displayLabel.text!)!
-            }
-            print("leftOperand :",calData.leftOperand," / rightOperand :",calData.rightOperand, " / calculate Value :",calData.calculateValue )
-        // MAKR: - ÷ 버튼
+            } else { calData.rightOperand = Double(displayLabel.text!)! }
         case "÷":
-            print("/ 버튼")
+            print("÷")
             if calData.leftOperand == nil {
-                calData.leftOperand = Double(self.displayLabel.text!)!
-                // 나누기 의 경우는 초기 rightOperand 가 1 이다.
+                calData.leftOperand = Double(displayLabel.text!)!
                 calData.rightOperand = 1
-
-            }else {
-                calData.leftOperand = calData.calculateValue
-                calData.rightOperand = Double(self.displayLabel.text!)!
-            }
-            print("leftOperand :",calData.leftOperand," / rightOperand :",calData.rightOperand, " / calculate Value :",calData.calculateValue )
-            
+            } else { calData.rightOperand = Double(displayLabel.text!)! }
         default:
             break
         }
         
-        calData.opButtonInfo.0 = (sender.titleLabel?.text)! // 버튼에 대한 정보 주고
-        calData.operate() // 계산하고
-        calData.opButtonInfo.1 = true // 첫 버튼 계산후 버튼 정보 true 준다.
+        calData.opInfo.0 = (sender.titleLabel?.text)!
         
-        if calData.calculateValue == Double.infinity {
-            displayLabel.text = "ZeroDivisionError"
-        } else {
-            displayLabel.text = "\(calData.calculateValue)" // 데이터표현
+        if calData.opInfo.1 {
+            calData.operate()
+            calData.leftOperand = calData.calculateValue
+            displayLabel.text = calData.result
         }
+        
+        calData.opInfo.1 = true
+        
+        print("left :",calData.leftOperand," / right :",calData.rightOperand," / calValue :",calData.calculateValue," / opInfo :",calData.opInfo)
         
     }
     
@@ -183,50 +157,34 @@ class ViewController: UIViewController {
     
     // 숫자버튼 누르면 처음 눌렀을 때와 아닐 떄 처리.
     func numberButton(sender: UIButton) {
-        // 숫자 누르면 버튼 인포 조정해주고.
-        calData.opButtonInfo.1 = false
         
-        if calData.isNumberButtonTap == false {
-            displayLabel.text = "\(sender.tag)"
-            calData.isNumberButtonTap = true
-        }else {
-            displayLabel.text = self.displayLabel.text! + "\(sender.tag)"
+        if calData.isButtonFirst {
+            displayLabel.text = String(sender.tag)
+            calData.isButtonFirst = false
         }
+        else { displayLabel.text = self.displayLabel.text! + String(sender.tag) }
     }
     
     @objc func resultAction(sender: UIButton) {
         print("= 버튼")
         
-        // + = 되게 하려고
-        //calData.opButtonInfo.1 = false
-        if sender.tag == 0, calData.opButtonInfo.1 == false {
-            
-            calData.clearData()
-            displayLabel.text = "0"
-            resultButton.tag = 0
-            
-        } else if sender.tag == 0,calData.opButtonInfo.1 == true{
-            calData.rightOperand = Double(self.displayLabel.text!)!
-            calData.opButtonInfo.1 = false
-            sender.tag = 1
-        }
-        calData.operate() // 계산하고
         
-        if calData.calculateValue == Double.infinity {
-            displayLabel.text = "ZeroDivisionError"
-        } else {
-            displayLabel.text = "\(calData.calculateValue)" // 데이터표현
-        }
         
-        print("leftOperand :",calData.leftOperand," / rightOperand :",calData.rightOperand, " / calculate Value :",calData.calculateValue )
+        calData.isButtonFirst = true
+        
+        calData.rightOperand = Double(displayLabel.text!)!
+        calData.operate()
+        displayLabel.text = calData.result
+    
+        
+        print("left :",calData.leftOperand," / right :",calData.rightOperand," / calValue :",calData.calculateValue," / opInfo :",calData.opInfo)
+        
     }
     
     // MARK: - AC 버튼
     @objc func clearAction(sender: UIButton) {
-        print("clear 버튼")
-        calData.clearData()
+        calData.clear()
         displayLabel.text = "0"
-        resultButton.tag = 0
     }
 }
 

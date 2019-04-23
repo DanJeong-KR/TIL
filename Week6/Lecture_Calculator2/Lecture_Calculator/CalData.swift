@@ -5,135 +5,45 @@ import Foundation
 // 데이터를 연산하고 저장하는 부분.
 class CalData {
     
+    var operandArray: [Double?] = [nil,nil]
+    
     var calculateValue: Double = 0.0
     
-    var opButtonInfo = ("",false) // 연산자 정보와, 연산자 버튼 클릭된정보
-    
-    var isNumberButtonTap = false
+    var result: String {
+        get { return String(calculateValue) }
+    }
     
     var leftOperand: Double? = nil
     var rightOperand: Double = 0.0
     
-    // 컨트롤러에서 연산자 버튼 누르면 연산을 하는 부분
+    var opInfo: (String,Bool) = ("",false) // op , op버튼 눌러졌는지  정보
+    var isButtonFirst = true
+    
     func operate() {
-        
-        switch opButtonInfo.0 {
+        switch opInfo.0 {
         case "+":
-            plusOperate()
+            calculateValue = leftOperand! + rightOperand
         case "−":
-            minusOperate()
+            calculateValue = leftOperand! - rightOperand
         case "×":
-            timesOperate()
+            calculateValue = leftOperand! * rightOperand
         case "÷":
-            divisionOperate()
-        case "=":
-            if opButtonInfo.0 == "+" {
-                calculateValue = leftOperand! + rightOperand
-            }else if opButtonInfo.0 == "−" {
-                calculateValue = leftOperand! - rightOperand
-            }else if opButtonInfo.0 == "×" {
-                calculateValue = leftOperand! * rightOperand
-            }else if opButtonInfo.0 == "÷" {
-                calculateValue = leftOperand! / rightOperand
-            }else {
-                print("띠옹")
-            }
+            calculateValue = leftOperand! / rightOperand
             
         default:
             break
         }
+        
+        // 계산이 수행됬으면 다음 계산을 위해 초기화.
+        opInfo = ("",false)
     }
     
-    func clearData() {
+    
+    func clear() {
         calculateValue = 0.0
-        opButtonInfo = ("",false)
-        isNumberButtonTap = false
-        
         leftOperand = nil
         rightOperand = 0.0
+        opInfo = ("",false)
+        isButtonFirst = true
     }
-    
-    
-    func plusOperate() {
-        print("+연산 하는 부분.")
-        if opButtonInfo.1 == false {
-            calculateValue = leftOperand! + rightOperand
-        }
-        isNumberButtonTap = false
-    }
-    
-    func minusOperate() {
-        print("-연산해서 계산값에 올림")
-        
-        if !opButtonInfo.1 {
-            calculateValue = leftOperand! - rightOperand
-        }
-        isNumberButtonTap = false
-    }
-    
-    func timesOperate() {
-        print("*연산해서 계산값에 올림")
-        if !opButtonInfo.1 {
-            calculateValue = leftOperand! * rightOperand
-        }
-        isNumberButtonTap = false
-    }
-    
-    func divisionOperate() {
-        print("/연산해서 계산값에 올림")
-        if !opButtonInfo.1 {
-            calculateValue = leftOperand! / rightOperand
-        }
-        isNumberButtonTap = false
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    static let shared = CalData()
-    private init () {
-        
-        leftOperand = "0"
-        rightOperand = "0"
-        currentValue = ""
-        resultValue = 0
-        buttonInfo = ""
-        buttonCount = 0
-    }
-    
-
-    var leftOperand: String?
-    var rightOperand: String? {
-        willSet {
-            leftOperand = self.rightOperand
-        }
-    }
-    
-    var currentValue: String?
-    var resultValue: Int?
-    var buttonCount: Int
-        
-    var buttonInfo: String
-    */
 }
