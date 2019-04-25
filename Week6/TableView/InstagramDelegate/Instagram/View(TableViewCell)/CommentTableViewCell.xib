@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="Instagram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="434" height="141.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9L-2T-GK1">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="141.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="tEE-UE-tn6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="275-3z-3ln">
+                        <rect key="frame" x="145" y="50.5" width="284" height="76"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHB-ba-wvy">
+                        <rect key="frame" x="145" y="15" width="95" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="95" id="DX0-xV-t1z"/>
+                            <constraint firstAttribute="height" constant="20.5" id="Je3-Is-2Qb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AHB-ba-wvy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5nM-PH-yWe"/>
+                    <constraint firstItem="275-3z-3ln" firstAttribute="leading" secondItem="F9L-2T-GK1" secondAttribute="trailing" constant="5" id="9gF-PY-0UT"/>
+                    <constraint firstAttribute="bottom" secondItem="F9L-2T-GK1" secondAttribute="bottom" id="Bfb-qI-RaD"/>
+                    <constraint firstItem="F9L-2T-GK1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ktv-te-l9L"/>
+                    <constraint firstItem="275-3z-3ln" firstAttribute="top" secondItem="AHB-ba-wvy" secondAttribute="bottom" constant="15" id="OqT-Lq-O1U"/>
+                    <constraint firstItem="F9L-2T-GK1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UkW-4L-z9p"/>
+                    <constraint firstAttribute="bottom" secondItem="275-3z-3ln" secondAttribute="bottom" constant="15" id="fEA-17-sCr"/>
+                    <constraint firstAttribute="trailing" secondItem="275-3z-3ln" secondAttribute="trailing" constant="5" id="gGn-1R-9eE"/>
+                    <constraint firstItem="AHB-ba-wvy" firstAttribute="leading" secondItem="F9L-2T-GK1" secondAttribute="trailing" constant="5" id="nZJ-8Q-MXt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="feedCommentLabel" destination="275-3z-3ln" id="NtV-ZZ-gjH"/>
+                <outlet property="feedImageView" destination="F9L-2T-GK1" id="g3x-f6-bbS"/>
+                <outlet property="feedNameLabel" destination="AHB-ba-wvy" id="iCi-mZ-YNP"/>
+            </connections>
+            <point key="canvasLocation" x="130.43478260869566" y="2.0089285714285712"/>
+        </tableViewCell>
+    </objects>
+</document>

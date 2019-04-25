@@ -17,8 +17,8 @@ class Chart {
   
   init(height: Int, xPosition: Int) {
     self.height = height
-//    print(self.height)    // 초기화 이후
-//    print(self.xPosition) // 초기화 이전
+    print(self.height)    // 초기화 이후
+    //print(self.xPosition) // 초기화 이전
     
   //  self.printValues()     // 저장 프로퍼티 전체 초기화 이전
     // 초기화 이전에 print 하면 에러
@@ -51,22 +51,32 @@ class Rectangle {
     self.height = height
     self.xPosition = xPosition
   }
+    func printValues() {
+        print(self.height)
+        print(self.xPosition)
+    }
 }
-
 
 extension Rectangle {
-  // Convenience Initializer 만 가능
-//  init(xPosition: Int) {
-//    self.height = 10
-//    self.xPosition = xPosition
-//  }
-    // extention 은 일종의 확장판같은 개념이기 때문에 designated 는 사용할 수 없게 해놓았네. optional 인 convenience 만 사용가능
-    
-    
-  convenience init(height: Int) {
-    self.init(height: height, xPosition: 10)
-  }
+    convenience init(height: Int) {
+        self.init(height: height, xPosition: 10)
+        self.printValues()
+    }
 }
+Rectangle(height: 30)
+//extension Rectangle {
+//  // Convenience Initializer 만 가능
+////  init(xPosition: Int) {
+////    self.height = 10
+////    self.xPosition = xPosition
+////  }
+//    // extention 은 일종의 확장판같은 개념이기 때문에 designated 는 사용할 수 없게 해놓았네. optional 인 convenience 만 사용가능
+//
+//
+//  convenience init(height: Int) {
+//    self.init(height: height, xPosition: 10)
+//  }
+//}
 
 let rect1 = Rectangle(height: 10, xPosition: 20)
 let rect2 = Rectangle(height: 10)
