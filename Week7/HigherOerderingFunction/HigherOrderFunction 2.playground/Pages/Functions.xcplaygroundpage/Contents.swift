@@ -41,7 +41,10 @@ print()
  - 1~10 까지의 숫자 중 짝수만 출력하다가 9가 되면 종료되도록 forEach를 이용해 구현해본 뒤 for 와 비교하여 설명
  ---
  */
-
+Array(1...10).forEach {
+    if $0 % 2 == 0 && $0 <= 9 { print($0) }
+    else { return }
+}
 
 
 /*:
@@ -50,19 +53,7 @@ print()
  - 컬렉션의 각 요소(Element)에 동일 연산을 적용하여, 변형된 새 컬렉션 반환
  ---
  */
-
-print("\n---------- [ Map ] ----------\n")
-
-let names = ["Chris", "Alex", "Bob", "Barry"]
-names
-  .map { $0 + "'s name" }
-  .forEach { print($0) }
-
-let intArr = Array<Int>(repeating: 2, count: 10)
-let indexPlusElement = intArr.enumerated().map {
-  return $0 + $1
-}
-print(indexPlusElement)
+//let names = ["Chris", "Alex", "Bob", "Barry"]
 
 /*:
  ---
@@ -72,18 +63,8 @@ print(indexPlusElement)
  */
 print("\n---------- [ filter ] ----------\n")
 
-// let names = ["Chris", "Alex", "Bob", "Barry"]
+ let names = ["Chris", "Alex", "Bob", "Barry"]
 
-let containBNames = names
-  .filter { (name) -> Bool in
-    return name.contains("B")
-  }
-print(containBNames)
-
-let countAlexNames = names
-  .filter { $0 == "Alex" }
-  .count
-print(countAlexNames)
 
 
 /*:
@@ -93,6 +74,8 @@ print(countAlexNames)
  ---
  */
 print("\n---------- [ reduce ] ----------\n")
+
+print((1...10).reduce(0) { $0 + $1 })
 
 /***************************************************
  (1...100)
@@ -125,9 +108,9 @@ print(sum1to100)
  ---
  */
 // 아래 둘 모두 reduce를 이용해 "123" 이라는 문자열이 되도록 만들기
-["1", "2", "3"]
+["1", "2", "3"].reduce("", +)
 
-[1, 2, 3]
+print([1, 2, 3].map{ String($0) }.reduce("", +))
 
 
 
@@ -157,16 +140,18 @@ print(positiveNumbers)
  */
 print("\n---------- [ flatMap ] ----------\n")
 
+
+//
 let nestedArr = [[1, 2, 3], [1, 5, 99], [1, 1]]
 print(nestedArr.flatMap { $0 })
-
-
+//
+//
 let nestedArr2 = [[[1,2,3], [4,5,6], [7, 8, 9]], [[10, 11, 12], [13, 14]]]
 let flattenNumbers1 = nestedArr2.flatMap { $0 }
 print(flattenNumbers1)
 
-let flattenNumbers2 = flattenNumbers1.flatMap { $0 }
-print(flattenNumbers2)
+let test = flattenNumbers1.flatMap{ $0 }
+print(test)
 
 
 

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TableViewLecturePractice
+//  AutoLayout
 //
-//  Created by chang sic jung on 15/04/2019.
+//  Created by chang sic jung on 26/04/2019.
 //  Copyright © 2019 chang sic jung. All rights reserved.
 //
 

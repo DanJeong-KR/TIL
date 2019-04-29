@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TableViewLecturePractice.xcodeproj">
+      location = "self:AutoLayout.xcodeproj">
    </FileRef>
 </Workspace>

@@ -20,7 +20,7 @@ final class MemoryViewController: UIViewController {
   
     // 아파트.
   final class Apartment {
-    var tenant: Person?
+    weak var tenant: Person?
     let unit: String
     
     init(unit: String) {
