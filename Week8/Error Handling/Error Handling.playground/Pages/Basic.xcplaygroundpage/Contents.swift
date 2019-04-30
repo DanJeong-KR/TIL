@@ -14,15 +14,11 @@ print(tmpDir)
 
 func writeMethodExample() {
   // Error
-  // "Swift".write(toFile: filePath, atomically: true, encoding: .utf8)
+  //"Swift".write(toFile: filePath, atomically: true, encoding: .utf8)
   
   try? "Swift".write(toFile: filePath, atomically: true, encoding: .utf8)
   
-  /***************************************************
-   func write(toFile:atomically:encoding:) throws
-   - throws 키워드 주목
-   - Error 발생 시 처리하기 위한 코드 필요
-   ***************************************************/
+  
 }
 writeMethodExample()
 
@@ -36,7 +32,7 @@ func threeTypesOfTry() {
    ***************************************************/
   print("1. try")
   do {
-    let fileContents = try String(contentsOfFile: filePath)
+    let fileContents = try String(contentsOfFile: errorFilePath)
     print(fileContents)
   } catch {
     print(error.localizedDescription)
@@ -57,10 +53,10 @@ func threeTypesOfTry() {
    try!  -  Optional 강제 언래핑. 단, 에러 발생 시 crash.
    ***************************************************/
   print("\n3. try!")
-  let contentsUnwrapped = try! String(contentsOfFile: filePath)
-  print(contentsUnwrapped)
+//  let contentsUnwrapped = try! String(contentsOfFile: filePath)
+//  print(contentsUnwrapped)
 //  let unwrappedError = try! String(contentsOfFile: errorFilePath)
-//  print(unwrappedError)
+                                                                                                           //print(unwrappedError)
 }
 threeTypesOfTry()
 
@@ -72,12 +68,17 @@ func doTryFlow() {
   do {
     // 아래 내용 실행 결과?
     let r1 = try String(contentsOfFile: filePath)
+    print(r1)
     let r2 = (try? String(contentsOfFile: filePath)) ?? ""
+    print(r2)
     let r3 = (try? String(contentsOfFile: errorFilePath)) ?? ""
+    print(r3)
     let r4 = try String(contentsOfFile: errorFilePath)
+    print(r4)
     let r5 = try! String(contentsOfFile: filePath)
+    print(r5)
     let r6 = try! String(contentsOfFile: errorFilePath)
-    print(r1, r2, r3, r4, r5, r6)
+    print(r6)
   } catch {
     print(error.localizedDescription)
   }
@@ -98,17 +99,18 @@ enum MyError: Error {
   case errorWithParam(num: Int)
 }
 
-func throwError() throws {
+func throwError() throws  {
   /***************************************************
    throws 메서드에서는 throw 를 통해 직접 에러를 던지거나
    throws 메서드에 대해 do catch 문 없이 단순히 try 만을 사용할 수도 있다.
    ***************************************************/
   // throw
+    
   throw MyError.errorWithParam(num: 10)
 //  throw MyError.errorWithoutParam
   
   // try
-//  try "1".write(toFile: tmpDir, atomically: true, encoding: .utf8)
+  try "1".write(toFile: tmpDir, atomically: true, encoding: .utf8)
 }
 
 func throwsErrorExample() {

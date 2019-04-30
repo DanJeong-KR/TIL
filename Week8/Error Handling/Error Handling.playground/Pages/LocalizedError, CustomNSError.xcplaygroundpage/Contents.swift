@@ -1,5 +1,6 @@
 //: [Previous](@previous)
 import Foundation
+
 /*:
  ---
  # LocalizedError, CustomNSError
@@ -45,26 +46,26 @@ func localizedErrorExample() {
 localizedErrorExample()
 
 
-//extension CustomizedError: LocalizedError {
-//  var errorDescription: String? {
-//    switch self {
-//    case .errorWithoutParam:
-//      return NSLocalizedString("Error without parameter", comment: "")
-//    case .errorWithParam(let x):
-//      return NSLocalizedString("Error with param \(x)", comment: "")
-//    }
-//  }
-//
-//  var failureReason: String? {
-//    return NSLocalizedString("failureReason", comment: "")
-//  }
-//  var recoverySuggestion: String? {
-//    return NSLocalizedString("recoverySuggestion", comment: "")
-//  }
-//  var helpAnchor: String? {
-//    return NSLocalizedString("helpAnchor", comment: "")
-//  }
-//}
+extension CustomizedError: LocalizedError {
+  var errorDescription: String? {
+    switch self {
+    case .errorWithoutParam:
+      return NSLocalizedString("Error without parameter", comment: "")
+    case .errorWithParam(let x):
+      return NSLocalizedString("Error with param \(x)", comment: "")
+    }
+  }
+
+  var failureReason: String? {
+    return NSLocalizedString("failureReason", comment: "")
+  }
+  var recoverySuggestion: String? {
+    return NSLocalizedString("recoverySuggestion", comment: "")
+  }
+  var helpAnchor: String? {
+    return NSLocalizedString("helpAnchor", comment: "")
+  }
+}
 
 
 
@@ -81,14 +82,14 @@ func customNSErrorExample() {
     print(e.userInfo)
   }
 }
+//customNSErrorExample()
+
+
+extension CustomizedError: CustomNSError {
+  static var errorDomain: String { return "myErrorDomain" }
+  var errorCode: Int { return -10 }
+  var errorUserInfo: [String : Any] { return ["My": "UserInfo"] }
+}
 customNSErrorExample()
-
-
-//extension CustomizedError: CustomNSError {
-//  static var errorDomain: String { return "myErrorDomain" }
-//  var errorCode: Int { return -10 }
-//  var errorUserInfo: [String : Any] { return ["My": "UserInfo"] }
-//}
-
 
 //: [Next](@next)

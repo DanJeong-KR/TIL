@@ -9,19 +9,16 @@ import Foundation
 print("\n---------- [ deferOrder 1 ] ----------\n")
 
 func throwError() throws {
-  throw NSError(domain: "Domain", code: 1, userInfo: nil)
+    throw NSError(domain: "Domain", code: 1, userInfo: nil)
 }
+
 func deferExample() {
-  /***************************************************
-   문자열 출력 순서는??
-   1) do 문에서 오류가 발생했을 때
-   2) do 문에서 오류가 발생하지 않았을 때
-   ***************************************************/
+
   defer { print("1) First defer") }
-  
+
   do {
     print("2) Do")
-    try throwError()
+    try? throwError()
   } catch {
     return print("3) Error :", error)
   }
@@ -45,7 +42,6 @@ func deferOrder() {
 deferOrder()
 
 
-
 print("\n---------- [ Sum 1...100 ] ----------\n")
 
 func sumOneToHundred() {
@@ -58,7 +54,6 @@ func sumOneToHundred() {
   print(sum)
 }
 sumOneToHundred()
-
 
 
 //: [Next](@next)

@@ -37,6 +37,13 @@ func downloadImage(from urlString: String, completionHandler: @escaping (Result<
 
 let url = "https://loremflickr.com/320/240/dog"
 //let url = "No Image Url"
+
+
+downloadImage(from: url) { reuslt in
+    
+}
+
+
 downloadImage(from: url) { result in
   switch result {
   case .success(let data):
