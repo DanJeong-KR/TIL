@@ -141,10 +141,10 @@ func checkPrimeNumbers(number: Int) {
 }
  
 
-checkPrimeNumbers(number: 1)
-checkPrimeNumbers(number: 10)   // 4개
-checkPrimeNumbers(number: 100)  // 25개
-checkPrimeNumbers(number: 1000) // 168개
+//checkPrimeNumbers(number: 1)
+//checkPrimeNumbers(number: 10)   // 4개
+//checkPrimeNumbers(number: 100)  // 25개
+//checkPrimeNumbers(number: 1000) // 168개
 
 
 /***************************************************
@@ -162,8 +162,28 @@ checkPrimeNumbers(number: 1000) // 168개
  구글에 로그인하였습니다. (아이디 - google@gmail.com, 비밀번호 - 0000)
  ***************************************************/
 
+enum Site {
+    case google(String, String)
+    case kakao(String, String)
+    case naver(String, String)
+    
+    func signIn() {
+        switch self {
+        case .google(let id, let pass):
+            print("구글에 로그인 하셨습니다. (아이디 - \(id) 비밀번호 - \(pass))")
+        case .kakao(let id, let pass):
+            print("카카오에 로그인 하셨습니다. (아이디 - \(id) 비밀번호 - \(pass))")
+        case .naver(let id, let pass):
+            print("네이버에 로그인 하셨습니다. (아이디 - \(id) 비밀번호 - \(pass))")
+        }
+    }
+}
 
-// 모르겠습니다.
+
+let google = Site.google("google@gmail.com", "0000")
+google.signIn()
+
+
 
 
 //: [Next](@next)

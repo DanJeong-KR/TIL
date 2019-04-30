@@ -1,36 +1,29 @@
 
-let data1 = Array(1...100)
-let data2 = [0, 3, 9, 15, 27, 33, 41, 49, 90, 98]
 
-var arrayData2:[[Int]?] = []
 
-var tempArray:[Int] = []
-for i in data2 {
-    let temp:Int = i / 10
-    tempArray.append(temp)
-}
-print(tempArray)
 
-for i in 0...10 {
-    if tempArray.contains(i) {
-        arrayData2.append([])
-    }else {
-        arrayData2.append(nil)
+
+
+enum Site {
+    case google(String, String)
+    case kakao(String, String)
+    case naver(String, String)
+    
+    func signIn() {
+        switch self {
+        case .google(let id, let pass):
+            print("구글에 로그인 하셨습니다. (아이디 - \(id) 비밀번호 - \(pass))")
+        case .kakao(let id, let pass):
+            print("카카오에 로그인 하셨습니다. (아이디 - \(id) 비밀번호 - \(pass))")
+        case .naver(let id, let pass):
+            print("네이버에 로그인 하셨습니다. (아이디 - \(id) 비밀번호 - \(pass))")
+        }
     }
 }
-print(arrayData2)
 
 
-for i in data2 {
-    let temp: Int = i / 10
-    arrayData2[temp]!.append(i)
-}
-
-
-
-
-
-
+let google = Site.google("google@gmail.com", "0000")
+google.signIn()
 
 
 

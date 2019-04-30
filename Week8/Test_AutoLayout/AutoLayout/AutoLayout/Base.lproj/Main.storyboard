@@ -18,34 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="013-J7-Fcc">
-                                <rect key="frame" x="0.0" y="0.0" width="207" height="448"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSq-7b-5nj">
-                                        <rect key="frame" x="52" y="112" width="103.5" height="224"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="첫번째 문제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMc-v8-OE1">
-                                        <rect key="frame" x="51" y="366" width="105" height="28"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="30f-bh-TIs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.18349974982562423" green="1" blue="0.11758770642611127" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="width" secondItem="013-J7-Fcc" secondAttribute="width" multiplier="0.5" id="5dX-qE-dp6"/>
-                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="centerX" secondItem="013-J7-Fcc" secondAttribute="centerX" id="6FN-7r-J3S"/>
-                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="centerY" secondItem="013-J7-Fcc" secondAttribute="centerY" id="LeJ-qS-iSs"/>
-                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="height" secondItem="013-J7-Fcc" secondAttribute="height" multiplier="0.5" id="QY1-dR-pFa"/>
-                                    <constraint firstItem="XMc-v8-OE1" firstAttribute="top" secondItem="eSq-7b-5nj" secondAttribute="bottom" constant="30" id="a7S-fl-JXt"/>
-                                    <constraint firstItem="XMc-v8-OE1" firstAttribute="centerX" secondItem="013-J7-Fcc" secondAttribute="centerX" id="fvw-Cl-MVN"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnW-Lt-h6G">
                                 <rect key="frame" x="207" y="0.0" width="207" height="448"/>
                                 <subviews>
@@ -102,6 +74,34 @@
                                     <constraint firstItem="dR0-DF-AXC" firstAttribute="height" secondItem="1dQ-z7-9Xm" secondAttribute="height" multiplier="0.5" id="gob-hg-h1a"/>
                                     <constraint firstItem="BSL-UL-xtQ" firstAttribute="centerX" secondItem="dR0-DF-AXC" secondAttribute="centerX" id="u1Y-9b-SZP"/>
                                     <constraint firstItem="dR0-DF-AXC" firstAttribute="width" secondItem="1dQ-z7-9Xm" secondAttribute="width" multiplier="0.5" id="xzF-lc-nif"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="013-J7-Fcc">
+                                <rect key="frame" x="0.0" y="0.0" width="207" height="448"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSq-7b-5nj">
+                                        <rect key="frame" x="52" y="112" width="103.5" height="224"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="첫번째 문제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMc-v8-OE1">
+                                        <rect key="frame" x="51" y="366" width="105" height="28"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="30f-bh-TIs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18349974982562423" green="1" blue="0.11758770642611127" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="width" secondItem="013-J7-Fcc" secondAttribute="width" multiplier="0.5" id="5dX-qE-dp6"/>
+                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="centerX" secondItem="013-J7-Fcc" secondAttribute="centerX" id="6FN-7r-J3S"/>
+                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="centerY" secondItem="013-J7-Fcc" secondAttribute="centerY" id="LeJ-qS-iSs"/>
+                                    <constraint firstItem="eSq-7b-5nj" firstAttribute="height" secondItem="013-J7-Fcc" secondAttribute="height" multiplier="0.5" id="QY1-dR-pFa"/>
+                                    <constraint firstItem="XMc-v8-OE1" firstAttribute="top" secondItem="eSq-7b-5nj" secondAttribute="bottom" constant="30" id="a7S-fl-JXt"/>
+                                    <constraint firstItem="XMc-v8-OE1" firstAttribute="centerX" secondItem="013-J7-Fcc" secondAttribute="centerX" id="fvw-Cl-MVN"/>
                                 </constraints>
                             </view>
                         </subviews>

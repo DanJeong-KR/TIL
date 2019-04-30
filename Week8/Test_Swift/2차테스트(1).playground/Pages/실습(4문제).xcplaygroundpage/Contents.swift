@@ -31,10 +31,10 @@ import Foundation
 
 print("\n---------- [ 1번 문제 ] ----------\n")
 
-enum CoffeeMenu {
-    case americano
-    case latte
-    case cappuccino
+enum CoffeeMenu: String {
+    case americano = "Americano"
+    case latte = "Latte"
+    case cappuccino = "Cappuccino"
 }
 
 class Customer {
