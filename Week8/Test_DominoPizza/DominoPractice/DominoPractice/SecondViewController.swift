@@ -31,7 +31,7 @@ class SecondViewController: UIViewController {
             sectionLabel.backgroundColor = .red
             sectionLabel.font = UIFont.boldSystemFont(ofSize: 25)
             sectionLabel.translatesAutoresizingMaskIntoConstraints = false
-            if self.dataArr.count == 0 {
+            if self.dataArr.isEmpty {
                 NSLayoutConstraint.activate([
                     sectionLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
                     sectionLabel.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
@@ -43,7 +43,7 @@ class SecondViewController: UIViewController {
                 NSLayoutConstraint.activate([
                     sectionLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
                     sectionLabel.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
-                    sectionLabel.topAnchor.constraint(equalTo: self.dataArr[self.dataArr.count - 1].topAnchor ),
+                    sectionLabel.topAnchor.constraint(equalTo: self.dataArr[self.dataArr.count - 1].bottomAnchor ),
                     sectionLabel.widthAnchor.constraint(equalToConstant: 414),
                     sectionLabel.heightAnchor.constraint(equalToConstant: 40),
                     ])
@@ -61,12 +61,13 @@ class SecondViewController: UIViewController {
                 NSLayoutConstraint.activate([
                     productLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
                     productLabel.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
-                    productLabel.topAnchor.constraint(equalTo: self.dataArr[self.dataArr.count - 1].topAnchor ),
+                    productLabel.topAnchor.constraint(equalTo: self.dataArr[self.dataArr.count - 1].bottomAnchor ),
                     productLabel.widthAnchor.constraint(equalToConstant: 414),
                     productLabel.heightAnchor.constraint(equalToConstant: 40),
                     ])
                 dataArr.append(productLabel)
             }}
+        dataArr.last!.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
         dataArr.forEach { print("test :" + $0.text!) }
     }
