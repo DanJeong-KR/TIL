@@ -2,6 +2,12 @@
 import Foundation
 
 var input = [5, 6, 1, 3, 10, 2, 7, 14, 9]
+print("정렬되기 전 input :",input)
+
+bubbleSort(input: &input)
+
+print("정렬된 후 input :",input)
+
 
 var inputTest = [5,2,4,6,1,3]
 
@@ -26,6 +32,6 @@ var inputCases = [
 //    print("bubble :",tempArray)
 //}
 
-insertionSort(input: &input)
+//insertionSort(input: &input)
 
 

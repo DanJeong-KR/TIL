@@ -19,14 +19,11 @@ protocol LinkedListStack {
 
 class SingleLinkedList: LinkedListStack {
     var size: Int = 0
-    
     var isEmpty: Bool {
         return head == nil
     }
-    
     var head: SingleNode?
     var tail: SingleNode?
-    
     
     func push(node: SingleNode) {
         if isEmpty {
@@ -49,19 +46,13 @@ class SingleLinkedList: LinkedListStack {
     
     func pop() -> String? {
         tail = nodeSearch(at: size - 2)
-        
         let temp = tail?.next?.value
-        
         tail?.next = nil
-        
         size -= 1
         return temp
     }
     
-    func peek() -> String? {
-        return tail?.value
-        
-    }
+    func peek() -> String? { return tail?.value }
     
     func nodeSearch(at index: Int) -> SingleNode? {
         var currentNode = head

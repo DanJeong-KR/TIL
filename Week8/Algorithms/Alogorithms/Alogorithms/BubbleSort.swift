@@ -31,7 +31,7 @@ func bubbleSort(input: inout [Int]) {
             }
             preIdx += 1
             postIdx += 1
-            print(input)
+//            print(input)
             
         }
         
