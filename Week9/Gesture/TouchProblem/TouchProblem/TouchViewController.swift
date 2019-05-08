@@ -10,24 +10,27 @@ import UIKit
 
 class TouchViewController: UIViewController {
     
-    var partRect: CGRect?
+    var activeRect: CGRect?
     
+    var isMakeNewSpace: Bool = true
+    
+    // 라벨
     @IBOutlet weak var touchCountLabel: UILabel!
-    
     var touchCount:Int = 0 {
         didSet {
             touchCountLabel.text = String(self.touchCount)
         }
     }
     
-    var isMakeNewSpace: Bool = true
-    
+    // 좌표
     @IBOutlet weak var coordinateLabel: UILabel!
     var coordinate: CGPoint = CGPoint(x: 0, y: 0) {
         didSet {
             coordinateLabel.text = "( \(self.coordinate.x) , \(self.coordinate.y) )"
         }
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
@@ -39,11 +42,11 @@ class TouchViewController: UIViewController {
         
         if isMakeNewSpace {
             
-            partRect = CGRect(x: touchPoint.x - 20, y: touchPoint.y - 20, width: 40, height: 40)
+            activeRect = CGRect(x: touchPoint.x - 20, y: touchPoint.y - 20, width: 40, height: 40)
             isMakeNewSpace = false
         }
         
-        if partRect!.contains(touchPoint) {
+        if activeRect!.contains(touchPoint) {
             touchCount += 1
         }else {
             isMakeNewSpace = true

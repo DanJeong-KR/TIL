@@ -3,8 +3,8 @@ import UIKit
 
 class GestureViewController: UIViewController {
     
-    var partRect: CGRect?
-    var isMakeNewSpace: Bool = true
+    var rect: CGRect?
+    var enableRectActive: Bool = true
     
     @IBOutlet weak var tapCountLabel: UILabel!
     var touchCount:Int = 0 {
@@ -20,22 +20,28 @@ class GestureViewController: UIViewController {
         }
     }
     
+    func makeRectActive(_ touchPoint: CGPoint) {
+        if enableRectActive {
+            rect = CGRect(x: touchPoint.x - 20, y: touchPoint.y - 20, width: 40, height: 40)
+            enableRectActive = false
+        }
+    }
+    
+    func touchWork(_ touchPoint: CGPoint){
+        if rect!.contains(touchPoint) {
+            touchCount += 1
+        }else {
+            enableRectActive = true
+            touchCount = 1
+        }
+    }
+    
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         let touchPoint = sender.location(in: view)
         
         coordinate = touchPoint
         
-        if isMakeNewSpace {
-            
-            partRect = CGRect(x: touchPoint.x - 20, y: touchPoint.y - 20, width: 40, height: 40)
-            isMakeNewSpace = false
-        }
-        
-        if partRect!.contains(touchPoint) {
-            touchCount += 1
-        }else {
-            isMakeNewSpace = true
-            touchCount = 1
-        }
+        makeRectActive(touchPoint)
+        touchWork(touchPoint)
     }
 }
