@@ -1,6 +1,11 @@
 
-## iOS Study는 블로그에 모두 포스팅 합니다.
+### 동료들 깃허브 주소
+* [이봉원 강사님](https://github.com/giftbott/iOSDevLinks#basic)
+* [창근님](https://github.com/Chang-Geun-Ryu/Task)
+* [현철님] (https://github.com/furydeveloper/iosreport)
 
+* [커리큘럼](https://docs.google.com/spreadsheets/d/1GkUiPJ1qdhyKEbLV8ZmWsS5G9bqAXZXUDqXeNde9bYw/edit#gid=1496939992)
+* [과제 기록하기 google drive](https://docs.google.com/spreadsheets/d/1ZHibHVZLhu9HBpaIHOde1w-g7mUwUhdoedVpfCkZi_0/edit#gid=1542387548)
 * ### [changsic.github.io](<https://changsic.github.io/>)
 
 ## 유용한 정보
@@ -46,9 +51,3 @@
  * Gesture Recognizer
 
 
-
-
-### 동료들 깃허브 주소
-* [이봉원 강사님](https://github.com/giftbott/iOSDevLinks#basic)
-* [창근님](https://github.com/Chang-Geun-Ryu/Task)
-* [현철님] (https://github.com/furydeveloper/iosreport)
