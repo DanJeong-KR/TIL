@@ -25,11 +25,30 @@
 * ScrollView
 * TableView
 * ARC
+* Instagram 만들기 프로젝트
+
+### Week7
+* Higher Ordering Function
+* Calculator 만들기 프로젝트
+
+### Week8
+* 2차 테스트
+ * 이론 , 오토레이아웃, 도미노 피자 앱
+* Notification Center
+* Error handling
+* Data Structure
+* Algorithms
+
+### Week9
+* ImagePicker
+* Gesture
+ * touch
+ * Gesture Recognizer
 
 
 
 
-
-동료들 깃허브 주소
+### 동료들 깃허브 주소
 * [이봉원 강사님](https://github.com/giftbott/iOSDevLinks#basic)
-* [창근님]()
+* [창근님](https://github.com/Chang-Geun-Ryu/Task)
+* [현철님] (https://github.com/furydeveloper/iosreport)
