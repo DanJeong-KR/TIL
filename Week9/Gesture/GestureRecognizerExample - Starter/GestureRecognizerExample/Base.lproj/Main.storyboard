@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="07g-kH-v4U">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Touch-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TouchViewController" customModule="GestureRecognizerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat1" translatesAutoresizingMaskIntoConstraints="NO" id="2Wy-Pr-Xe2">
+                                <rect key="frame" x="114" y="125" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="9y9-zz-dZg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Touch" id="wM2-Fm-Az3"/>
+                    <connections>
+                        <outlet property="imageView" destination="2Wy-Pr-Xe2" id="tJH-4A-cgB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="-107.49625187406298"/>
+        </scene>
+        <!--Gesture-->
+        <scene sceneID="kTy-KL-SYs">
+            <objects>
+                <viewController id="nvL-LU-keQ" customClass="GestureViewController" customModule="GestureRecognizerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8b-gW-oql">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat2" translatesAutoresizingMaskIntoConstraints="NO" id="0TY-wR-KaX">
+                                <rect key="frame" x="116" y="126" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="mCH-Rq-fyk"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ern-uL-m49" appends="YES" id="y5B-Gi-V1D"/>
+                            <outletCollection property="gestureRecognizers" destination="s10-YP-4nT" appends="YES" id="Yln-ST-f64"/>
+                            <outletCollection property="gestureRecognizers" destination="3Qh-vY-by0" appends="YES" id="hCC-Dp-ejx"/>
+                            <outletCollection property="gestureRecognizers" destination="d2X-3f-S1T" appends="YES" id="1eJ-6U-G1i"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gesture" id="nai-nK-b8Q"/>
+                    <connections>
+                        <outlet property="imageView" destination="0TY-wR-KaX" id="Q49-ug-G3U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4h-Mc-e2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Ern-uL-m49">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="nvL-LU-keQ" id="sY3-Oa-v4y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <rotationGestureRecognizer id="s10-YP-4nT">
+                    <connections>
+                        <action selector="handleRotationGesture:" destination="nvL-LU-keQ" id="uWC-r0-txU"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="3Qh-vY-by0">
+                    <connections>
+                        <action selector="handleSwipeGesture:" destination="nvL-LU-keQ" id="ld8-68-ZTb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="d2X-3f-S1T">
+                    <connections>
+                        <action selector="handleSwipeGesture:" destination="nvL-LU-keQ" id="gya-J1-oXK"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="908" y="569.86506746626696"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3Sk-qR-JFu">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="07g-kH-v4U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QwY-P5-Ago">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="VqV-AP-dVi"/>
+                        <segue destination="nvL-LU-keQ" kind="relationship" relationship="viewControllers" id="JcC-UA-hob"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilV-rc-Rsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="250"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cat1" width="150" height="150"/>
+        <image name="cat2" width="150" height="150"/>
+    </resources>
+</document>
