@@ -22,8 +22,10 @@ class SingleLinkedList: LinkedListStack {
     var isEmpty: Bool {
         return head == nil
     }
+    
     var head: SingleNode?
     var tail: SingleNode?
+    
     
     func push(node: SingleNode) {
         if isEmpty {
@@ -35,6 +37,7 @@ class SingleLinkedList: LinkedListStack {
         }
         size += 1
     }
+    
     
     func insert(node newNode: SingleNode, at index: Int) {
         newNode.next = nodeSearch(at: index)
