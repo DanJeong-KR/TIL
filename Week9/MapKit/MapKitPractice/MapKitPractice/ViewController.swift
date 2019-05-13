@@ -22,17 +22,17 @@ class ViewController: UIViewController {
     }
     var annotationPracticeBtn: UIButton {
         let button = UIButton(type: .system)
-        button.setTitle("annotation", for: .normal)
+        button.setTitle("Annotation", for: .normal)
         return button
     }
     var rendererPracticeBtn: UIButton {
         let button = UIButton(type: .system)
-        button.setTitle("renderer", for: .normal)
+        button.setTitle("Renderer", for: .normal)
         return button
     }
     var calloutActionPracticeBtn: UIButton {
         let button = UIButton(type: .system)
-        button.setTitle("calloutAction", for: .normal)
+        button.setTitle("CalloutAction", for: .normal)
         return button
     }
 
@@ -57,11 +57,24 @@ class ViewController: UIViewController {
     @objc func btnAction(_ sender: UIButton) {
         switch sender.titleLabel?.text {
         case "Location":
-            let vc = LocationViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            pushViewController(storyBoardID: "LocationVC")
+        case "Geocode":
+            pushViewController(storyBoardID: "GeocodeVC")
+        case "Annotation":
+            pushViewController(storyBoardID: "AnnotationVC")
+        case "Renderer":
+            pushViewController(storyBoardID: "RendererVC")
+        case "CalloutAction":
+            pushViewController(storyBoardID: "CalloutActionVC")
         default:
             break
         }
+    }
+    
+    func pushViewController(storyBoardID: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: storyBoardID)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 

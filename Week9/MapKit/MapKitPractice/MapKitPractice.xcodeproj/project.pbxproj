@@ -13,6 +13,10 @@
 		8E110BA32286C2B7008486E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E110BA22286C2B7008486E5 /* Assets.xcassets */; };
 		8E110BA62286C2B7008486E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E110BA42286C2B7008486E5 /* LaunchScreen.storyboard */; };
 		8E110BAE2286C6DC008486E5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E110BAD2286C6DC008486E5 /* LocationViewController.swift */; };
+		8E110BB022890A30008486E5 /* GeocodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E110BAF22890A30008486E5 /* GeocodeViewController.swift */; };
+		8E110BB222893800008486E5 /* AnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E110BB122893800008486E5 /* AnnotationViewController.swift */; };
+		8E110BB4228941AD008486E5 /* RendererOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E110BB3228941AD008486E5 /* RendererOverlayViewController.swift */; };
+		8E110BB6228950C0008486E5 /* CalloutActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E110BB5228950C0008486E5 /* CalloutActionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		8E110BA52286C2B7008486E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E110BA72286C2B7008486E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E110BAD2286C6DC008486E5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		8E110BAF22890A30008486E5 /* GeocodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeViewController.swift; sourceTree = "<group>"; };
+		8E110BB122893800008486E5 /* AnnotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewController.swift; sourceTree = "<group>"; };
+		8E110BB3228941AD008486E5 /* RendererOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendererOverlayViewController.swift; sourceTree = "<group>"; };
+		8E110BB5228950C0008486E5 /* CalloutActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutActionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				8E110B9B2286C2B4008486E5 /* AppDelegate.swift */,
 				8E110B9D2286C2B4008486E5 /* ViewController.swift */,
 				8E110BAD2286C6DC008486E5 /* LocationViewController.swift */,
+				8E110BAF22890A30008486E5 /* GeocodeViewController.swift */,
+				8E110BB122893800008486E5 /* AnnotationViewController.swift */,
+				8E110BB3228941AD008486E5 /* RendererOverlayViewController.swift */,
+				8E110BB5228950C0008486E5 /* CalloutActionViewController.swift */,
 				8E110B9F2286C2B4008486E5 /* Main.storyboard */,
 				8E110BA22286C2B7008486E5 /* Assets.xcassets */,
 				8E110BA42286C2B7008486E5 /* LaunchScreen.storyboard */,
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E110BB6228950C0008486E5 /* CalloutActionViewController.swift in Sources */,
 				8E110BAE2286C6DC008486E5 /* LocationViewController.swift in Sources */,
 				8E110B9E2286C2B4008486E5 /* ViewController.swift in Sources */,
+				8E110BB4228941AD008486E5 /* RendererOverlayViewController.swift in Sources */,
+				8E110BB222893800008486E5 /* AnnotationViewController.swift in Sources */,
 				8E110B9C2286C2B4008486E5 /* AppDelegate.swift in Sources */,
+				8E110BB022890A30008486E5 /* GeocodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH53J489YG;
 				INFOPLIST_FILE = MapKitPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = iosSchool.changsik.MapKitPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -307,6 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH53J489YG;
 				INFOPLIST_FILE = MapKitPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = iosSchool.changsik.MapKitPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
