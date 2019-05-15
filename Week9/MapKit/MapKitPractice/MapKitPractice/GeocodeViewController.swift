@@ -18,6 +18,7 @@ class GeocodeViewController: UIViewController {
         let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         
+        
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placeMark, error) in
             print(placeMark)
