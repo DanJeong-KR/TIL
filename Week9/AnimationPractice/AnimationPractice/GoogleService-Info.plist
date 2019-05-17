@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>335809870451-sln6ckqjus2gv1vj21vt3iret0aasghc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335809870451-sln6ckqjus2gv1vj21vt3iret0aasghc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqEVjCo1nG0T_0KSbvy-RdHF6FTc1Wjx0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335809870451</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>iosSchool.changsik.AnimationPractice</string>
+	<key>PROJECT_ID</key>
+	<string>test-changsik</string>
+	<key>STORAGE_BUCKET</key>
+	<string>test-changsik.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335809870451:ios:43808ac1406582ac</string>
+	<key>DATABASE_URL</key>
+	<string>https://test-changsik.firebaseio.com</string>
+</dict>
+</plist>

@@ -14,7 +14,8 @@ final class ImageAnimationViewController: UIViewController {
   @IBOutlet private weak var durationLabel: UILabel!
   @IBOutlet private weak var repeatCountLabel: UILabel!
     
-    let images = ["AppStore", "Calculator", "Calendar", "Camera", "Clock", "Contacts", "Files"].compactMap(UIImage.init(named:))
+    
+    let images = ["AppStore", "Calculator", "Calendar", "Camera", "Clock", "Contacts", "Files"].compactMap{ UIImage(named: $0) }
   
   override func viewDidLoad() {
     super.viewDidLoad()
