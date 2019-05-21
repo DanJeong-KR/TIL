@@ -16,8 +16,42 @@ import UIKit
 
 class MyViewController: UITableViewController {
     
+    var user: User?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        user = UserManager.shared.getUserData()
+        
+        tableView.register(UINib(nibName: "MyViewTableViewCell", bundle: nil), forCellReuseIdentifier: "MyViewTableViewCell")
+        tableView.separatorColor = .clear
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeProfileBtnDidTap(_:)), name: NSNotification.Name("changeProfileBtnDidTap"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        user = UserManager.shared.getUserData()
+        tableView.reloadData()
+    }
+    
+    
+    @objc private func changeProfileBtnDidTap(_ sender: Notification) {
+        
+        guard let userInfo = sender.userInfo as? [String : String],
+        let nikNameText = userInfo["nikNameText"] as? String
+            else { return }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyViewTableViewCell", for: indexPath) as! MyViewTableViewCell
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
 }

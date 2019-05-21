@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     
     // MARK: life cycle
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()

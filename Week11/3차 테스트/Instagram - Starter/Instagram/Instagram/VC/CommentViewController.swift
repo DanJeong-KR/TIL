@@ -17,29 +17,39 @@ class CommentViewController: UIViewController{
     let emojiSelectionView = EmojiSelectionView()
     let tableView = UITableView()
     
+    var feedInfo: FeedData!
+    var commentArr: [String?] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         configure()
     }
     
     private func configure() {
         // 속성들 설정하기
         title = "댓글"
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        //tableView.frame.size.height = CGFloat(500)
+        tableView.register(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentTableViewCell")
+        notifications()
+        commentArr = feedInfo.comments
         // add subview 했어?
         view.addSubviews([emojiSelectionView, tableView])
-        view.bringSubviewToFront(emojiSelectionView)
         // delegate 있어?
-        //tableView.dataSource = self
+        tableView.dataSource = self
         // layout 설정 했어?
         autolayouts()
     }
     
+    private func notifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(commentBtnDidTapped(_:)), name: NSNotification.Name("commentBtnDidTapped"), object: nil)
+    }
+    
     private func autolayouts() {
-        tableView.layout.top().leading().trailing().bottom()
-        emojiSelectionView.layout.leading().trailing().bottom()
-        emojiSelectionView.heightAnchor.constraint(equalTo: tableView.heightAnchor,multiplier: 0.2 ).isActive = true
+        tableView.layout.top().leading().trailing()
+        emojiSelectionView.layout.leading().trailing().bottom().top(equalTo: tableView.bottomAnchor)
+        emojiSelectionView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2 ).isActive = true
     }
     
     @objc private func keyboardWillShowNotification(_ sender: Notification) {
@@ -53,19 +63,35 @@ class CommentViewController: UIViewController{
             self.emojiSelectionView.bottom(equalTo: self.view.bottomAnchor, constant: -keyboardHeight)
             self.view.layoutIfNeeded()
         }
+    }
+    
+    @objc private func commentBtnDidTapped(_ sender: Notification) {
+        // 데이터 모델에 데이터 주고 테이블 리로드 시켜서
+        guard let userInfo = sender.userInfo as? [String : String],
+            let text = userInfo["text"] as? String
+            else { return }
+        
+        feedInfo.comments.append(text)
+        
+        tableView.reloadData()
         
     }
 }
 
-//extension CommentViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return
-//    }
-//
-//
-//}
+extension CommentViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return feedInfo.comments.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell
+        cell.feedNickNameLabel.text = feedInfo.nikName
+        cell.feedImageView.image = feedInfo.profileImage
+        cell.feedComment.text = feedInfo.comments[indexPath.row]
+        return cell
+    }
+
+
+}
 

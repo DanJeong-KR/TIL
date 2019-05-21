@@ -74,8 +74,12 @@ class HomeViewController: UIViewController {
         show(vc, sender: nil)
     }
     
-    @objc private func commentButtonDidTap(_ sender: Any) {
+    @objc private func commentButtonDidTap(_ sender: Notification) {
+        guard let sender = sender.userInfo as? [String : FeedData],
+            let selectedFeedInfo = sender["feedInfo"] as? FeedData
+            else { return }
         let vc = CommentViewController()
+        vc.feedInfo = selectedFeedInfo
         show(vc, sender: nil)
     }
     

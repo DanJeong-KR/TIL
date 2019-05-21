@@ -53,8 +53,7 @@ class FeedTableViewCell: UITableViewCell {
     // 댓글 버튼이 눌렸을때 호출될 함수 입니다.
     // 힌트: HomeVC 에게 댓글 버튼이 눌렸다는걸 알려주세요
     @IBAction func commentButtonDidTap(_ sender: Any) {
-        noti.post(name: NSNotification.Name(rawValue: "commentButtonDidTap"), object: nil)
+        noti.post(name: NSNotification.Name(rawValue: "commentButtonDidTap"), object: nil, userInfo: ["feedInfo" : feedData])
     }
-    
     
 }

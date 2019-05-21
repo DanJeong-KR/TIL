@@ -19,17 +19,23 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var feedNickNameLabel: UILabel!
     @IBOutlet weak var feedComment: UILabel!
     
+    
     // 이미지 뷰에 이미지를 띄웠다면 동그랗게 만들어보세요.
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        configure()
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        configure()
+    }
+    
+    private func configure() {
+        feedImageView.layer.cornerRadius = feedImageView.bounds.width / 2
     }
     
 }

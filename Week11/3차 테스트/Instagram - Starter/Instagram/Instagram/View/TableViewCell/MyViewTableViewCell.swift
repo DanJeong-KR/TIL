@@ -19,6 +19,8 @@ class MyViewTableViewCell: UITableViewCell {
     // 이 구현 방식은 선택사항입니다. 다르게 구현해도 괜찮습니다.
     var model: User?{
         didSet{
+            myProfileImageView.image = self.model?.profileImage
+            nickNameTextField.text = self.model?.nikName ?? ""
         }
     }
     
@@ -28,6 +30,8 @@ class MyViewTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        myProfileImageView.layer.cornerRadius = myProfileImageView.bounds.width / 2
+        myProfileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewDidTapped(_:)))  )
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,12 +42,13 @@ class MyViewTableViewCell: UITableViewCell {
     // 닉네임 수정 버튼을 눌렀을때 호출될 함수 입니다.
     // 힌트: AddFeedVC에게 닉네임 수정 버튼이 눌렸다는 것을 알려주세요.
     @IBAction func changeProfileBtnDidTap(_ sender: Any) {
-
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeProfileBtnDidTap"), object: nil, userInfo: ["nikNameText" : nickNameTextField.text])
     }
     
     // 추가적으로 제스처 이벤트가 발생했을때 구현될 함수를 하나더 만들어주세요.
     // 힌트: AddFeedVC에게 프로필 이미지뷰의 제스처 이벤트가 발생했다는 것을 알려주세요.
-    
-    
-    
+    @objc func imageViewDidTapped(_ sender: Any) {
+        nickNameTextField.resignFirstResponder()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "imageViewDidTapped"), object: nil)
+    }
 }
