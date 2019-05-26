@@ -16,11 +16,17 @@ import UIKit
 class AddFeedViewController: UITableViewController {
     
     var receivedImage: UIImage?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        user = UserManager.shared.getUserData()
     }
     
     private func configure() {
@@ -35,7 +41,7 @@ class AddFeedViewController: UITableViewController {
         guard let storyText = (tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddFeedTableViewCell).textView.text,
         let receivedImage = receivedImage else { return }
         
-        let feedData = FeedData(feedImage: receivedImage, myStory: storyText)
+        let feedData = FeedData(profileImage: user?.profileImage, nikName: user?.nikName, feedImage: receivedImage, myStory: storyText)
         FeedManager.shared.addFeedDatas(feedData)
         
         navigationController?.popViewController(animated: true)

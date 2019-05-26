@@ -14,16 +14,16 @@ import UIKit
 // 피드데이터는 클래스로 만들어졌습니다. 
 class FeedData {
     
-    var profileImage: UIImage? = UIImage(named: "profile3")
-    var nikName: String? = ""
+    var profileImage: UIImage?
+    var nikName: String?
     var feedImage: UIImage?
     var myStory: String?
     var comments: [String?] = ["hihi", "ㅎㅔ헤"]
     
-    init(profileImage profileImage: UIImage = UIImage(named: "profile3")!, nikName nikName: String = "", feedImage feedImage: UIImage, myStory myStory: String) {
-        self.profileImage = profileImage
-        self.nikName = nikName
-        self.feedImage = feedImage
-        self.myStory = myStory
+    init(profileImage pfImage: UIImage?, nikName nikNameText: String?, feedImage feedImg: UIImage?, myStory myStoryText: String?) {
+        self.profileImage = pfImage ?? UIImage(named: "profile2")
+        self.nikName = nikNameText ?? ""
+        self.feedImage = feedImg
+        self.myStory = myStoryText
     }
 }

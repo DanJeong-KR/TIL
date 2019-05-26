@@ -14,7 +14,7 @@ import UIKit
 
 class UserManager {
     static let shared = UserManager()
-    private var userData: User = User(nikName: "", profileImage: nil)
+    private var userData = User(nikName: "", profileImage: UIImage(named: "profile3"))
     
     private init() { }
     
@@ -24,5 +24,13 @@ class UserManager {
     
     func setUserData(user: User) -> () {
         self.userData = user
+    }
+    
+    func setUserNickName(nickName: String) -> () {
+        self.userData.nikName = nickName
+    }
+    
+    func setUserProfileImage(profileImage: UIImage) -> () {
+        self.userData.profileImage = profileImage
     }
 }

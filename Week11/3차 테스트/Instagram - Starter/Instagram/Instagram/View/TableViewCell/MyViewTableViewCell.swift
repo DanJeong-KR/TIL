@@ -31,9 +31,14 @@ class MyViewTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         myProfileImageView.layer.cornerRadius = myProfileImageView.bounds.width / 2
-        myProfileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewDidTapped(_:)))  )
+        myProfileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileImageDidTapped(_:)))  )
+        myProfileImageView.isUserInteractionEnabled = true
+        
+        changeProfileBtn.layer.borderColor = UIColor.lightGray.cgColor
+        changeProfileBtn.layer.borderWidth = 1
+        changeProfileBtn.layer.cornerRadius = 5
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -47,7 +52,7 @@ class MyViewTableViewCell: UITableViewCell {
     
     // 추가적으로 제스처 이벤트가 발생했을때 구현될 함수를 하나더 만들어주세요.
     // 힌트: AddFeedVC에게 프로필 이미지뷰의 제스처 이벤트가 발생했다는 것을 알려주세요.
-    @objc func imageViewDidTapped(_ sender: Any) {
+    @objc func profileImageDidTapped(_ sender: Any) {
         nickNameTextField.resignFirstResponder()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "imageViewDidTapped"), object: nil)
     }
