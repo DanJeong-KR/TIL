@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="StatusBarAndHomeIndicatorExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d9A-Do-3I3">
+                                <rect key="frame" x="105" y="399" width="204" height="98"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GV2-qe-6ez">
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="ContainerViewController"/>
+                                        <connections>
+                                            <segue destination="d3E-bS-X4k" kind="show" id="IjF-OK-lge"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jv7-ms-kgx">
+                                        <rect key="frame" x="0.0" y="64" width="204" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="ContentViewController"/>
+                                        <connections>
+                                            <segue destination="Dq4-6h-Drg" kind="show" identifier="" id="Suw-rE-pwi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d9A-Do-3I3" firstAttribute="centerX" secondItem="FFC-w0-rYr" secondAttribute="centerX" id="MRy-KN-RYN"/>
+                            <constraint firstItem="d9A-Do-3I3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hiX-qx-5cn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FFC-w0-rYr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="70"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="69e-lp-6oi">
+            <objects>
+                <viewController id="Dq4-6h-Drg" customClass="ContentViewController" customModule="StatusBarAndHomeIndicatorExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IcP-tg-p4H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="JKI-Sf-EMk">
+                                <rect key="frame" x="83.5" y="357" width="247" height="182"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zim-PT-3Yu">
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Toggle StatusBar Style"/>
+                                        <connections>
+                                            <action selector="toggleStatusBarStyle:" destination="Dq4-6h-Drg" eventType="touchUpInside" id="dsW-im-0LH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-bM-tVK">
+                                        <rect key="frame" x="0.0" y="74" width="247" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Toggle StatusBar Hidden"/>
+                                        <connections>
+                                            <action selector="toggleStatusBarHidden:" destination="Dq4-6h-Drg" eventType="touchUpInside" id="PLx-tp-Uya"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8M-Va-Gdb">
+                                        <rect key="frame" x="0.0" y="148" width="247" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Toggle HomeIndicator Hidden"/>
+                                        <connections>
+                                            <action selector="toggleHomeIndicatorHidden:" destination="Dq4-6h-Drg" eventType="touchUpInside" id="iJc-g5-p2J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81R-d2-AaX">
+                                <rect key="frame" x="347" y="52" width="47" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="2UQ-uB-3wR" kind="unwind" unwindAction="unwindToInitialVC:" id="8TL-vK-h0Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JKI-Sf-EMk" firstAttribute="centerY" secondItem="IcP-tg-p4H" secondAttribute="centerY" id="9dX-eC-e2T"/>
+                            <constraint firstItem="81R-d2-AaX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yxm-XM-8oR" secondAttribute="leading" id="BDr-Mf-hTB"/>
+                            <constraint firstItem="JKI-Sf-EMk" firstAttribute="centerX" secondItem="Yxm-XM-8oR" secondAttribute="centerX" id="BO4-2F-GeE"/>
+                            <constraint firstItem="81R-d2-AaX" firstAttribute="trailing" secondItem="IcP-tg-p4H" secondAttribute="trailingMargin" id="E6I-nK-dha"/>
+                            <constraint firstItem="81R-d2-AaX" firstAttribute="top" secondItem="Yxm-XM-8oR" secondAttribute="top" constant="8" id="dHV-1E-PBQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yxm-XM-8oR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIy-Wf-BlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2UQ-uB-3wR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="510"/>
+        </scene>
+        <!--Container-->
+        <scene sceneID="tLX-VI-una">
+            <objects>
+                <viewController id="lEp-IO-uCQ" customClass="ContentViewController" customModule="StatusBarAndHomeIndicatorExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dds-fD-SLj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GRq-5h-RsE">
+                                <rect key="frame" x="83.5" y="357" width="247" height="182"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf9-av-IhY">
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Toggle StatusBar Style"/>
+                                        <connections>
+                                            <action selector="toggleStatusBarStyle:" destination="lEp-IO-uCQ" eventType="touchUpInside" id="txo-AR-NEN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avi-ZL-hOZ">
+                                        <rect key="frame" x="0.0" y="74" width="247" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Toggle StatusBar Hidden"/>
+                                        <connections>
+                                            <action selector="toggleStatusBarHidden:" destination="lEp-IO-uCQ" eventType="touchUpInside" id="zx7-v6-Uoz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abT-gS-tU4">
+                                        <rect key="frame" x="0.0" y="148" width="247" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Toggle HomeIndicator Hidden"/>
+                                        <connections>
+                                            <action selector="toggleHomeIndicatorHidden:" destination="lEp-IO-uCQ" eventType="touchUpInside" id="Vrd-i1-Rf8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GRq-5h-RsE" firstAttribute="centerX" secondItem="ZYh-KQ-teh" secondAttribute="centerX" id="m1l-Ry-xgX"/>
+                            <constraint firstItem="GRq-5h-RsE" firstAttribute="centerY" secondItem="dds-fD-SLj" secondAttribute="centerY" id="n0y-Ux-F6i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZYh-KQ-teh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Container" id="He9-7R-YXX">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="igk-PZ-wTj">
+                            <connections>
+                                <segue destination="xno-BO-TkJ" kind="unwind" unwindAction="unwindToInitialVC:" id="iWs-lo-0D6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AzO-Kb-yl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xno-BO-TkJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="-236"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="ldy-2w-ZAh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d3E-bS-X4k" customClass="ContainerViewController" customModule="StatusBarAndHomeIndicatorExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0GT-9Y-hzb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lEp-IO-uCQ" kind="relationship" relationship="rootViewController" id="3gw-yl-2lH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQ1-tM-nst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-236"/>
+        </scene>
+    </scenes>
+</document>

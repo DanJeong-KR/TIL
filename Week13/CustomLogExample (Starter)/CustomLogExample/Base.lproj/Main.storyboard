@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ffL-zA-h44">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Xgs-Fo-KBE">
+            <objects>
+                <viewController id="ffL-zA-h44" customClass="ViewController" customModule="SimpleLogFunction" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lai-IT-0AW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s0P-Hu-qh6">
+                                <rect key="frame" x="155" y="338" width="104" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7F-CQ-GDT">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                        <state key="normal" title="Print"/>
+                                        <connections>
+                                            <action selector="didTapPrint:" destination="ffL-zA-h44" eventType="touchUpInside" id="Uk7-Ra-sUP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdd-8M-gLY">
+                                        <rect key="frame" x="0.0" y="50" width="104" height="30"/>
+                                        <state key="normal" title="NSLog"/>
+                                        <connections>
+                                            <action selector="didTapNSLog:" destination="ffL-zA-h44" eventType="touchUpInside" id="zlS-ww-sGG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdP-vP-yWb">
+                                        <rect key="frame" x="0.0" y="100" width="104" height="30"/>
+                                        <state key="normal" title="Speical Literals"/>
+                                        <connections>
+                                            <action selector="didTapSpecialLiterals:" destination="ffL-zA-h44" eventType="touchUpInside" id="hNP-kZ-Yle"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPB-pg-pb0">
+                                        <rect key="frame" x="0.0" y="150" width="104" height="30"/>
+                                        <state key="normal" title="Custom Log"/>
+                                        <connections>
+                                            <action selector="didTapCustomLog:" destination="ffL-zA-h44" eventType="touchUpInside" id="L67-4Y-ux3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fT-nT-YI0">
+                                        <rect key="frame" x="0.0" y="200" width="104" height="30"/>
+                                        <state key="normal" title="Test Button"/>
+                                        <connections>
+                                            <action selector="didTapTestButton:" destination="ffL-zA-h44" eventType="touchUpInside" id="rYS-fV-WCQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s0P-Hu-qh6" firstAttribute="centerY" secondItem="9mN-jn-kKW" secondAttribute="centerY" id="GTl-77-KEc"/>
+                            <constraint firstItem="s0P-Hu-qh6" firstAttribute="centerX" secondItem="9mN-jn-kKW" secondAttribute="centerX" id="Hai-Oa-Svc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9mN-jn-kKW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0J-pU-QRK" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
