@@ -92,9 +92,9 @@
 		5C6716591B46EC0F00C236F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E1859BC229E54F70088998E /* SpotInfoViewControllerByCode.swift */,
 				5C6716231B45469700C236F1 /* SpotsViewController.swift */,
 				5C6716281B45469700C236F1 /* SpotInfoViewController.swift */,
-				8E1859BC229E54F70088998E /* SpotInfoViewControllerByCode.swift */,
 				5C6716251B45469700C236F1 /* RatingViewController.swift */,
 				5C6716261B45469700C236F1 /* MapViewController.swift */,
 			);
