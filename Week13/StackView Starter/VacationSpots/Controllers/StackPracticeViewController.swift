@@ -24,16 +24,48 @@ class StackPracticeViewController: UIViewController {
         autolayouts()
     }
     
-    private func 
-    
     private func configure() {
+        
+        viewsConfigure()
+        stackViewConfigure()
         view.addSubviews([labelStackView,buttonStackView])
         labels.forEach { labelStackView.addArrangedSubview($0) }
         buttons.forEach { buttonStackView.addArrangedSubview($0) }
+        
+    }
+    
+    private func viewsConfigure() {
+        labels.forEach {
+            $0.text = "test"
+            $0.font = UIFont.boldSystemFont(ofSize: 30)
+            //$0.backgroundColor = .yellow
+        }
+        
+        buttons.forEach {
+            $0.setTitle("btn", for: .normal)
+            $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+            $0.backgroundColor = .green
+        }
+        
+    }
+    
+    private func stackViewConfigure() {
+        labelStackView.axis = .horizontal
+        labelStackView.backgroundColor = .lightGray
+        labelStackView.layer.borderColor = UIColor.black.cgColor
+        labelStackView.layer.borderWidth = 10
+        labelStackView.spacing = 30
+        labelStackView.alignment = .leading
+        labelStackView.distribution = .fillEqually
+        
+        buttonStackView.backgroundColor = .black
     }
     
     private func autolayouts() {
         labelStackView.layout.centerX().centerY(constant: -150)
+        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        labelStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        buttonStackView.layout.centerX().centerY(constant: 150)
     }
 
 }
