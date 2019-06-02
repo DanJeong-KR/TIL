@@ -23,6 +23,7 @@
 		5C6716301B45469700C236F1 /* StackWidthLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6716291B45469700C236F1 /* StackWidthLabel.swift */; };
 		8E1859BD229E54F70088998E /* SpotInfoViewControllerByCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1859BC229E54F70088998E /* SpotInfoViewControllerByCode.swift */; };
 		8E1859BF229E63790088998E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1859BE229E63790088998E /* UIViewExtension.swift */; };
+		8E185A2922A3B60D0088998E /* StackPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E185A2822A3B60C0088998E /* StackPracticeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5C6716291B45469700C236F1 /* StackWidthLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackWidthLabel.swift; sourceTree = "<group>"; };
 		8E1859BC229E54F70088998E /* SpotInfoViewControllerByCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotInfoViewControllerByCode.swift; sourceTree = "<group>"; };
 		8E1859BE229E63790088998E /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8E185A2822A3B60C0088998E /* StackPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackPracticeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1859BC229E54F70088998E /* SpotInfoViewControllerByCode.swift */,
+				8E185A2822A3B60C0088998E /* StackPracticeViewController.swift */,
 				5C6716231B45469700C236F1 /* SpotsViewController.swift */,
 				5C6716281B45469700C236F1 /* SpotInfoViewController.swift */,
 				5C6716251B45469700C236F1 /* RatingViewController.swift */,
@@ -208,6 +211,7 @@
 			files = (
 				8E1859BF229E63790088998E /* UIViewExtension.swift in Sources */,
 				5C67162B1B45469700C236F1 /* VacationSpotCell.swift in Sources */,
+				8E185A2922A3B60D0088998E /* StackPracticeViewController.swift in Sources */,
 				5C67162F1B45469700C236F1 /* SpotInfoViewController.swift in Sources */,
 				5C67162D1B45469700C236F1 /* MapViewController.swift in Sources */,
 				5C6716301B45469700C236F1 /* StackWidthLabel.swift in Sources */,
