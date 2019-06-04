@@ -26,14 +26,29 @@ let jsonData = """
   }
   """.data(using: .utf8)!
 
+// JSONSerialization 와 JSONDecoder 비교해서 해보기
 // JSONSerialization
+let jsonObject = try? JSONSerialization.jsonObject(with: jsonData)
+if let jsonDict = jsonObject as? [String : Any],
+    let name = jsonDict["name"] as? String,
+    let age = jsonDict["age"] as? Int
+{
+    let dog = Dog(name: name, age: age)
+    print("JSONSerialization 에서 dog : \(dog)")
+}
 
 // JSONDecoder
+let jsonDecoder = JSONDecoder()
+let decoededData = try? jsonDecoder.decode(Dog.self, from: jsonData)
+print("JSONDecoder 에서 : ",decoededData!)
 
+
+// 문제
 
 /***************************************************
  Array
  ***************************************************/
+
 print("\n---------- [ Array ] ----------\n")
 let jsonArrData = """
   [
@@ -42,15 +57,28 @@ let jsonArrData = """
   ]
   """.data(using: .utf8)!
 
-
+var tempArr: [Dog] = []
 // JSONSerialization
-
+let jsonObject = try? JSONSerialization.jsonObject(with: jsonArrData)
+if let jsonArr = jsonObject as? [[String : Any]] {
+    jsonArr.forEach{
+        if let name = $0["name"] as? String,
+            let age = $0["age"] as? Int {
+            tempArr.append(Dog(name: name, age: age))
+        }
+    }
+}
+print("JSONSerialization 로",tempArr)
 // JSONDecoder
+let decodedJsonData = jsonDecoder.decode([Dog].self, from: jsonArrData)
+print(" JSONDecoder 로 ",decodedJsonData)
+
 
 
 /***************************************************
  Dictionary
  ***************************************************/
+
 print("\n---------- [ Dictionary ] ----------\n")
 let jsonDictData = """
 {
@@ -62,8 +90,23 @@ let jsonDictData = """
 """.data(using: .utf8)!
 
 // JSONSerialization
+let jsonObject2 = try? JSONSerialization.jsonObject(with: jsonDictData)
+if let jsonDic = jsonObject2 as? [String : [[String : Any]]],
+    let dataArr = jsonDic["data"] {
+    dataArr.forEach {
+        if let name = $0["name"] as? String,
+            let age = $0["age"] as? Int{
+            print("name : \(name) / age : \(age)")
+        }
+    }
+}
 
 // JSONDecoder
+let decodedJsonDicData = jsonDecoder.decode([String : [Dog]].self, from: jsonDictData)
+
+print("haha",decodedJsonDicData)
+
+
 
 
 
@@ -76,6 +119,7 @@ let jsonDictData = """
  ### Answer
  ---
  */
+
 print("\n---------- [ Answer ] ----------\n")
 
 extension Dog {

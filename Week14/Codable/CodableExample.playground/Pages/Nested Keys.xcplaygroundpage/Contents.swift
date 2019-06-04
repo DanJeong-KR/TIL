@@ -24,6 +24,7 @@ let jsonData = """
 
 
 struct Coordinate {
+    // 내가 저장할 변수?
   var latitude: Double
   var longitude: Double
   var elevation: Double
@@ -31,14 +32,14 @@ struct Coordinate {
   enum CodingKeys: String, CodingKey {
     case latitude
     case longitude
-    case additionalInfo
+    case additionalInfo // 키값
   }
   enum AdditionalInfoKeys: String, CodingKey {
     case elevation
   }
 }
 
-
+// 중첩된 json 데이터를 받으면 최초 한번은 작성해주어야 한다.
 extension Coordinate: Decodable {
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -49,7 +50,6 @@ extension Coordinate: Decodable {
     elevation = try additionalInfo.decode(Double.self, forKey: .elevation)
   }
 }
-
 
 extension Coordinate: Encodable {
   func encode(to encoder: Encoder) throws {
@@ -63,12 +63,15 @@ extension Coordinate: Encodable {
 }
 
 
+
 do {
   let coordinates = try JSONDecoder().decode([Coordinate].self, from: jsonData)
   coordinates.forEach { print($0) }
 } catch {
   print(error.localizedDescription)
 }
+
+
 
 
 //: [Table of Contents](Contents) | [Previous](@previous) | [Next](@next)

@@ -17,9 +17,9 @@ let jsonData = """
 struct Astronauts: Decodable {
   let message: String
   let number: Int
-  let people: [Person]
+  let people: [Person] // 데이터가 배열이니까 배열로 한거야
   
-  struct Person: Decodable {
+  struct Person: Decodable { // 꼭 내부에 선언해야 하는 것은 아니다.
     let name: String
   }
 }

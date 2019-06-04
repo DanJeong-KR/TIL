@@ -89,6 +89,7 @@ struct Person {
 /***************************************************
  4번 문제
  - 다음 URL의 Repository 정보 중에서 다음 속성만을 골라서 데이터 모델로 만들고 출력
+ - full_name, description, stargazers_count, fork_count, html_url
  - https://api.github.com/search/repositories?q=user:giftbott
  - 위 URL의 user 부분을 자신의 아이디로 변경
  ***************************************************/

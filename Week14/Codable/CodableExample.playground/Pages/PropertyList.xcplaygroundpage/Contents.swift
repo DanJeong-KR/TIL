@@ -64,13 +64,26 @@ if let retrievedData = try? Data(contentsOf: archiveURL),
  - MacBook 타입을 Array, Dictionary 형태로 Encoding / Decoding 하려면?
  ---
  */
+// 밥먹고  와서 해봐라.
 
+print("\n---------- [ Q. Arr Encoder ] ----------\n")
+let Qarr = [macBook, macBook, macBook]
+let encodedArrData = try! pListEncoder.encode(Qarr)
+print(encodedArrData)
 
+print("\n---------- [ Q. Arr Decoder ] ----------\n")
+let decodedArrData = try? pListDecoder.decode([MacBook].self, from: encodedArrData)
+print(decodedArrData!)
 
+// dictionary
+print("\n---------- [ Q. Dic Encoder ] ----------\n")
+let DicArr = ["mac1" : macBook, "mac2" : macBook, "mac3" : macBook]
+let encodedDicData = try! pListEncoder.encode(DicArr)
+print(encodedDicData)
 
-
-
-
+print("\n---------- [ Q. Dic Decoder ] ----------\n")
+let decodedDicData = try? pListDecoder.decode([String : MacBook].self, from: encodedDicData)
+print(decodedDicData!)
 /*:
  ---
  ### Answer

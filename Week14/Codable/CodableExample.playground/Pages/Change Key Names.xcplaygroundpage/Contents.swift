@@ -1,6 +1,10 @@
 //: [Previous](@previous)
 import Foundation
 
+
+// 받는 JSON 데이터의 key 값이 언더바 = > 난 카멜케이스 쓸거잖아
+// CodingKey 프로토콜로 key 값 새로 지정할 수 있다 나에게 맞게
+
 let jsonData = """
 {
   "user_name": "James",
