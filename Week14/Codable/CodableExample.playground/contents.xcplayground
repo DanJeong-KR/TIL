@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='Contents'/>
+        <page name='JSON'/>
+        <page name='PropertyList'/>
+        <page name='versus Serialization'/>
+        <page name='Change Key Names'/>
+        <page name='Nested Codable'/>
+        <page name='Nested Keys'/>
+        <page name='Practice'/>
+        <page name='Answer'/>
+    </pages>
+</playground>

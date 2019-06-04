@@ -28,7 +28,7 @@ func practice1() {
         guard (jsonObject["message"] as? String) == "success",
         let timeStamp = jsonObject["timestamp"],
             let position = jsonObject["iss_position"] as? [String : String],
-            let longitude = position["longitude"], // ?? 왜 되는 거냐?
+            let longitude = position["longitude"], //
             let latitude = position["latitude"]
             else { return print(" Parsing Error ")}
         
@@ -73,34 +73,36 @@ struct User {
     var firstName: String
     var lastName: String
     var email: String
+    
+    init?(from json: [String : Any]) { // 이니셜라이저 에서 nil 반환하기
+        guard let id = json["id"] as? Int,
+            let firstName = json["first_name"] as? String,
+            let lastName = json["last_name"] as? String,
+            let email = json["email"] as? String
+            else { print("Parsing Error"); return nil }
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+    }
 }
 
 var userArr: [User] = []
 
 func practice2() {
-    let jsonData = jsonString2.data(using: .utf8)!
-    
+    let data = jsonString2.data(using: .utf8)!
     do {
-        let foundationObject =
-            try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
-        if let jsonDict = foundationObject as? [String : Any],
-            let users = jsonDict["users"] as? NSArray
+        let jsonObject =
+            try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        
+        if let jsonDict = jsonObject as? [String : Any],
+            let users = jsonDict["users"] as? [[String : Any]]
             {
                 users.forEach{
-                    if let user = $0 as? [String: Any],
-                    let id = user["id"] as? Int,
-                    let firstName = user["first_name"] as? String,
-                    let lastName = user["last_name"] as? String,
-                    let email = user["email"] as? String
-                    {
-                        
-                        userArr.append(User(id: id, firstName: firstName, lastName: lastName, email: email))
-                    }
-                    
+                    guard let user = User(from: $0) else { return }
+                    userArr.append(user)
                 }
-                
         }
-        
     } catch {
         print(error.localizedDescription)
     }

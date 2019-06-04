@@ -128,8 +128,6 @@ extension CustomCellViewController: UICollectionViewDataSource {
         } else { // 색상 , 채도, 명도
             return .init(hue: factor, saturation: factor, brightness: 1, alpha: 1)
         }
-        
-        
 
     }
     

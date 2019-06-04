@@ -29,12 +29,13 @@ extension BasicStoryboardViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasicCell", for: indexPath)
         
-        // contentView 에 imageView 가 올라가 있는거임. 스토리보드로 올리면
         if let imageView = cell.contentView.subviews.first as? UIImageView {
             let imageName = parkImages[indexPath.item % parkImages.count]
             imageView.image = UIImage(named: imageName)
         }
+        
         cell.layer.cornerRadius = 20
+        
         return cell
     }
 }

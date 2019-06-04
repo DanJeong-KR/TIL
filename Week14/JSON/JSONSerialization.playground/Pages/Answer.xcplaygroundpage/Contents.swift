@@ -85,6 +85,7 @@ struct User {
   }
 }
 
+
 func practice2() {
   guard let jsonData = jsonString2.data(using: .utf8),
     let json = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any],
@@ -95,7 +96,6 @@ func practice2() {
     guard let user = User(from: $0) else { return nil }
     return user
   }
-  
   print("\n---------- [ Users ] ----------\n")
   users.forEach { print($0) }
 }

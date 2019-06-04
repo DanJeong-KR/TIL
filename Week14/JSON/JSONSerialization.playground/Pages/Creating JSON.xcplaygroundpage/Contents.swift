@@ -71,9 +71,6 @@ private func dataWithJSONObject() {
 
 print("\n---------- [ dataWithJSONObject ] ----------\n")
 dataWithJSONObject()
-
-
-
 //: - - -
 //: # Creating a JSON Object
 //: * class func jsonObject(with:options:) throws -> Any
@@ -93,14 +90,11 @@ private func jsonObjectWithData() {
     }
   }
   """
-//  let jsonString = """
-//     { "hello": "world", "foo": "bar", "iOS": "Swift" }
-//  """
-  let jsonData = jsonString.data(using: .utf8)!
+  let data = jsonString.data(using: .utf8)!
 
   do {
-    let foundationObject = try JSONSerialization.jsonObject(with: jsonData)
-    if let jsonDict = foundationObject as? [String: Any] {
+    let jsonObject = try JSONSerialization.jsonObject(with: data)
+    if let jsonDict = jsonObject as? [String: Any] {
       print(jsonDict)
     }
   } catch {
