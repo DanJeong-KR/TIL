@@ -82,6 +82,7 @@ final class CustomCellViewController: UIViewController {
 //    scrolldirection 이 방향 설정하는 놈
     let layout = (collectionView.collectionViewLayout) as! UICollectionViewFlowLayout
     let current = layout.scrollDirection
+    
     layout.scrollDirection = current == .horizontal ? .vertical : .horizontal
   }
   
