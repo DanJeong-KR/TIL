@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="URLSessionExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17c-uw-CEf">
+                                <rect key="frame" x="16" y="323" width="382" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="kzv-Kk-EyP"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-x2-5Ht">
+                                <rect key="frame" x="8" y="149" width="398" height="144"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mse-UW-z4S">
+                                        <rect key="frame" x="154" y="0.0" width="90" height="30"/>
+                                        <state key="normal" title="Synchronous"/>
+                                        <connections>
+                                            <action selector="syncMethod" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJU-vI-k7a"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g0s-L3-kBi">
+                                        <rect key="frame" x="84.5" y="38" width="229" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAU-6B-7Uz">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
+                                                <state key="normal" title="URLComponents"/>
+                                                <connections>
+                                                    <action selector="urlComponentsExample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MyF-LP-jEA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-0s-kNQ">
+                                                <rect key="frame" x="136" y="0.0" width="93" height="30"/>
+                                                <state key="normal" title="URLEncoding"/>
+                                                <connections>
+                                                    <action selector="urlEncodingExample" destination="BYZ-38-t0r" eventType="touchUpInside" id="7EF-cL-878"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-0K-3A9">
+                                        <rect key="frame" x="149.5" y="76" width="99" height="30"/>
+                                        <state key="normal" title="SessionConfig"/>
+                                        <connections>
+                                            <action selector="sessionConfig:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5GY-yP-KgS"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wH1-Bh-wF1">
+                                        <rect key="frame" x="26" y="114" width="346" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-F0-8Ib">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="30"/>
+                                                <state key="normal" title="Get Method"/>
+                                                <connections>
+                                                    <action selector="requestGet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Od1-Ys-kUM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgH-3t-CO1">
+                                                <rect key="frame" x="122" y="0.0" width="102" height="30"/>
+                                                <state key="normal" title="Post Method"/>
+                                                <connections>
+                                                    <action selector="requestPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ez-rs-Qxt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIS-ZG-PYk">
+                                                <rect key="frame" x="244" y="0.0" width="102" height="30"/>
+                                                <state key="normal" title="Delete Method"/>
+                                                <connections>
+                                                    <action selector="requestDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAL-VO-QaA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="17c-uw-CEf" firstAttribute="leading" secondItem="IPC-RE-yqj" secondAttribute="leading" constant="16" id="1KJ-th-3KM"/>
+                            <constraint firstItem="17c-uw-CEf" firstAttribute="centerX" secondItem="IPC-RE-yqj" secondAttribute="centerX" id="E2V-pS-KGc"/>
+                            <constraint firstItem="17c-uw-CEf" firstAttribute="top" secondItem="wbQ-x2-5Ht" secondAttribute="bottom" constant="30" id="EV2-ib-Wo1"/>
+                            <constraint firstItem="wbQ-x2-5Ht" firstAttribute="leading" secondItem="IPC-RE-yqj" secondAttribute="leading" constant="8" id="EZA-ck-oXC"/>
+                            <constraint firstItem="IPC-RE-yqj" firstAttribute="trailing" secondItem="17c-uw-CEf" secondAttribute="trailing" constant="16" id="ZMf-cO-Lzr"/>
+                            <constraint firstItem="IPC-RE-yqj" firstAttribute="trailing" secondItem="wbQ-x2-5Ht" secondAttribute="trailing" constant="8" id="cep-vX-hWH"/>
+                            <constraint firstItem="17c-uw-CEf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s9s-vZ-00c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IPC-RE-yqj"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="17c-uw-CEf" id="pce-AZ-aP2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+</document>

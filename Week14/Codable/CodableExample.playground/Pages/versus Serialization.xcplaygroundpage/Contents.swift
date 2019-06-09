@@ -26,8 +26,6 @@ let jsonData = """
   }
   """.data(using: .utf8)!
 
-// JSONSerialization 와 JSONDecoder 비교해서 해보기
-// JSONSerialization
 let jsonObject = try? JSONSerialization.jsonObject(with: jsonData)
 if let jsonDict = jsonObject as? [String : Any],
     let name = jsonDict["name"] as? String,
