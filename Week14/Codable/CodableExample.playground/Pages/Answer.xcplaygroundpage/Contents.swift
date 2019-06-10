@@ -30,8 +30,11 @@ let jsonFruits = """
 struct Fruit: Codable {
   var name: String
   var cost: Int
+    // optional 처리 해주면 값이 들어오지 않는 것들은 nil 이 들어간다.
   var description: String?
 }
+
+
 
 let fruits = try decoder.decode([Fruit].self, from: jsonFruits)
 fruits.forEach { print($0) }
