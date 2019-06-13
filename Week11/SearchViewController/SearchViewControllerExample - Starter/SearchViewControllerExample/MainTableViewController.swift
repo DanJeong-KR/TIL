@@ -31,9 +31,8 @@ class MainTableViewController: UITableViewController {
         
         filteredData =  menuData.map{ ($0.menu) }.flatMap{ $0 }
     }
-
+    
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
     }
@@ -85,7 +84,6 @@ class MainTableViewController: UITableViewController {
         // search bar 에 값이 있으면 true
         return searchController.searchBar.text?.isEmpty ?? true
     }
-    
 }
 
 extension MainTableViewController: UISearchResultsUpdating {

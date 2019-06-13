@@ -174,48 +174,43 @@ final class ViewController: UIViewController {
   
   @IBAction func requestPost(_ sender: Any) {
     print("\n---------- [ Post Method ] ----------\n")
-    let todoEndpoint = "https://jsonplaceholder.typicode.com/todos"
-    guard let url = URL(string: todoEndpoint) else { return print("error : URL 을 생성할 수 없습니다.")}
     
-    let newTodo: [String : Any] = [
-        "userId" : 1,
-        "title" : "My first Todo ",
-        "completed" : false ]
-    guard let encodedTodo = try? JSONSerialization.data(withJSONObject: newTodo)
-        else { return }
     
+    let toDoAPIString = "https://jsonplaceholder.typicode.com/todos"
+    guard let url = URL(string: toDoAPIString) else { return print("error : URL 을 생성할 수 없습니다.")}
+    // POST 요청 Body 에 넣을 인코딩 된 데이터 생성하고
+    let newTodo: Todo = Todo(userId: 1, id: nil, title: "My First Todo", completed: false)
+    guard let encodedTodo = try? JSONEncoder().encode(newTodo) else { return }
+    
+    // URLRequest 로 HTTP 메소드 지정하고 Body 설정해준다.
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = "POST"
     urlRequest.httpBody = encodedTodo
     
     let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-        // 정석
-        guard error == nil else { return print(error!.localizedDescription) }
+        guard error == nil else { return print(error!.localizedDescription)}
         guard let response = response as? HTTPURLResponse,
-            (200..<300) ~= response.statusCode,
-            response.mimeType == "application/json" // 미리 정해진 타입을 확인할수도 있다~
-            else { return print("서버에러 400 혹은 500 ") }
+        (200..<300) ~= response.statusCode,
+        response.mimeType == "application/json"
+            else { return print("서버에러 ")}
         
-        print(response.statusCode)
-        
-        guard let data = data,
-            let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
-            else { print("data 가 존재하지 않습니다 . nil 들어왔잖아요 "); return }
-        
-        print(jsonObject)
-        
+        print("response :",response.statusCode)
     }
     task.resume()
   }
   
   
   @IBAction func requestDelete(_ sender: Any) {
-    print("\n---------- [ Delete Method ] ----------\n")
+    print("\n---------- [ PUT Method ] ----------\n")
     let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
     guard let url = URL(string: todoEndpoint) else { return print("error : URL 을 생성할 수 없습니다.")}
+    let updateTodo = Todo(userId: 10, id: 10, title: "Update Title", completed: true)
+    guard let encodedTodo = try? JSONEncoder().encode(updateTodo) else { return }
     
     var urlRequest = URLRequest(url: url)
-    urlRequest.httpMethod = "DELETE"
+    urlRequest.httpMethod = "PUT"
+    urlRequest.httpBody = encodedTodo
+    
     
     let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
         // 정석
@@ -227,10 +222,10 @@ final class ViewController: UIViewController {
         print(response.statusCode)
         //
         guard let data = data,
-            let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+            let updatedTodo = try? JSONDecoder().decode(Todo.self, from: data)
             else { print("data 가 존재하지 않습니다 . nil 들어왔잖아요 "); return }
         
-        print(jsonObject)
+        print(updatedTodo)
         
     }
     task.resume()
