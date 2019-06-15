@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 final class ViewController: UIViewController {
     
+    // MARK: - UI Properties
     private let blurEffect = UIBlurEffect(style: .dark)
     private lazy var blurEffectView = UIVisualEffectView(effect: blurEffect)
     private let imageView = UIImageView()
@@ -34,7 +36,7 @@ final class ViewController: UIViewController {
             private let minTempLabel = UILabel()
         private let currentTempLabel = UILabel()
     
-    // 프로퍼티 옵저버들
+    // MARK: - 네트워크로 받은 것들 프로퍼티
     private var locationInfo: LocationInfo! {
         didSet {
             let locationStr = self.locationInfo.city + " " + self.locationInfo.county + " " + self.locationInfo.village
@@ -65,7 +67,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    // 상태바
+    // 상태바 숨기기
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -181,10 +183,43 @@ final class ViewController: UIViewController {
         //bottomStackView.frame = CGRect(x: 0, y: 520, width: 400, height: 300)
     }
     
+    // MARK: - 현재위치 위도 경도 가져올 거고 위치서비스 허용 받아야지
+    private let locationManager = CLLocationManager()
+    
+    private func checkLocationAuthorStatus() {
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedWhenInUse:
+            fallthrough
+        case .authorizedAlways:
+            locationManager.requestAlwaysAuthorization()
+            startUpdateLocation() // 위치서비스 권한이 있으면 Location Update 시작!
+        default:
+            break
+        }
+    }
+    
+    func startUpdateLocation() {
+        let status = CLLocationManager.authorizationStatus()
+        guard status == .authorizedAlways || status == .authorizedWhenInUse, CLLocationManager.locationServicesEnabled() else {
+            print("authorizationStatus 에러") ; return }
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = 10.0
+        locationManager.startUpdatingLocation()
+    }
+    
     // MARK: - APIs
     private func apiProcess() {
-        let temperatureUrl = URL(string: "https://api2.sktelecom.com/weather/current/hourly?appKey=bd934d80-9cc6-4ecb-a821-b12a8584bd5e&lat=37.11776&lon=127.09776")!
-        let hourlyUrl = URL(string: "https://api2.sktelecom.com/weather/forecast/3days?appKey=bd934d80-9cc6-4ecb-a821-b12a8584bd5e&lat=37.11776&lon=127.09776")!
+        
+        checkLocationAuthorStatus()
+        let currentLatitude = String(locationManager.location?.coordinate.latitude ?? 0)
+        let currentLongitude = String(locationManager.location?.coordinate.longitude ?? 0)
+        
+        let temperatureUrl = URL(string: "https://api2.sktelecom.com/weather/current/hourly?appKey=bd934d80-9cc6-4ecb-a821-b12a8584bd5e&lat=" + currentLatitude + "&lon=" + currentLongitude)!
+        let hourlyUrl = URL(string: "https://api2.sktelecom.com/weather/forecast/3days?appKey=bd934d80-9cc6-4ecb-a821-b12a8584bd5e&lat=" + currentLatitude + "&lon=" + currentLongitude)!
         
         temperatureDataProcess(url: temperatureUrl)
         hourlyDataProcess(url: hourlyUrl)

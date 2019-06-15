@@ -32,6 +32,7 @@ final class LocationViewController: UIViewController {
         super.viewDidLoad()
         configure()
         checkAuthorizationStatus()
+        print("coordinate :",locationManager.location?.coordinate)
     }
     
     func configure() {
@@ -49,7 +50,7 @@ final class LocationViewController: UIViewController {
         case .authorizedWhenInUse:
             fallthrough
         case .authorizedAlways:
-            print("haha")
+
             locationManager.requestAlwaysAuthorization()
             startUpdateLocation()
             
