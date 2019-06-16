@@ -75,13 +75,16 @@ final class ViewController: UIViewController {
     // 아랫쪽 스택뷰 다이나믹 오토레이아웃 잡을 거야
     private var bottomStackViewLeadingConst: NSLayoutConstraint!
     
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         UIconfigures()
+        
         apiProcess()
+        
         layouts()
     }
     
@@ -211,6 +214,7 @@ final class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
+    
     // MARK: - APIs
     private func apiProcess() {
         
@@ -306,13 +310,12 @@ final class ViewController: UIViewController {
     private func bottomStackViewAnimation() {
         // MARK: - 왜 되는지 모르곘네 썅
         self.bottomStackViewLeadingConst.constant = 0
-        self.view.layoutIfNeeded()
         UIView.animate(withDuration: 1,
                        delay: 0,
                        options: .curveEaseInOut,
                        animations: {
                         self.bottomStackViewLeadingConst.constant = -400
-                        self.view.layoutIfNeeded()
+                        self.view.layoutIfNeeded() // animation 안에서 / 시스템이 감지해야 하니까
         })
         
     }
@@ -350,7 +353,6 @@ extension ViewController: UITableViewDataSource {
         guard let timeRelease = self.timeRelease else {
             print("cell 부분 timeRelease nil 들어오는 에러")
             return UITableViewCell() }
-        
         let date = makeDateLabelStr(inputStr: timeReleaseOptimizer(timeRelease: timeRelease, indexPathRow: indexPath.row))
         let castTime = makeCastTimeLabelStr(inputStr: timeReleaseOptimizer(timeRelease: timeRelease, indexPathRow: indexPath.row))
         

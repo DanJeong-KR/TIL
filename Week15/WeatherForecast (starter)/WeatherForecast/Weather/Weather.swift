@@ -66,14 +66,17 @@ struct TemperatureInfo {
     }
 }
 
+// sky code 받았을 때 내 Asset 폴더의 이미지이름과 같게 만드는 작업.
 func changeSkyImageCode(imageName: String?) -> String {
     
-    guard let imageName = imageName else { print("image가 nil 임"); return "SKY_14"}
+    guard let imageName = imageName else { logger("imageName 이 nil"); return "SKY_14"}
+    // 17:00:33 : sky_14  // 14
     var weatherNumber = imageName.split(separator: "_").last!
     _ = weatherNumber.removeFirst()
     return "SKY_" + String(weatherNumber)
 }
 
+// 현재시간 내게 맞게 생성하기
 func currentTimeGenerator() -> String {
     let now = Date()
     let calendar = Calendar.current
@@ -96,6 +99,7 @@ func currentTimeGenerator() -> String {
 // 요일까지 나오면서 indexPath 에 따라 시간 계산하고 String 으로 반환해주는 아이
 func timeReleaseOptimizer(timeRelease: String, indexPathRow: Int) -> String {
     // 여기 "2019-06-11 17:00:00"  들어오면
+    // // Sun 2019-06-16 18:00:00 이런 식으로 요일 추가해서 반환
     // indexPath 에 따라 날짜 , 요일 , 시간 알아야 해.
     let anHour:Int = 3600
     
@@ -111,32 +115,35 @@ func timeReleaseOptimizer(timeRelease: String, indexPathRow: Int) -> String {
     
     dateFormatter.dateFormat = "EEE yyyy-MM-dd HH:mm:ss"
     let resultStr = dateFormatter.string(from: weatherCastTime)
-    
     return resultStr
 }
 
 // 테이블 뷰 dateLabel 에 들어갈 부분
 func makeDateLabelStr(inputStr: String) -> String {
+    // Sun 2019-06-16 18:00:00 들어옴 -> 요일만 가져오자
     let splitDateArr = inputStr.split(separator: " ")
-    let forSplitYear = splitDateArr[1].split(separator: "-")
+    
+    // 2019-06-16 에서 년도 없앨 것
+    let forSplitYear = splitDateArr[1].split(separator: "-") // 년도 없애버림
     
     let weekDay = splitDateArr[0]
     var day = forSplitYear[1] + "." + forSplitYear[2]
     
     // 06월 이 6월로(한자리로) 나오고 10 ~ 12월은 두자리로 나오게 만드는 로직
     let newDay = day.split(separator: ".").first!
-    guard let dayInt = Int(String(newDay)) else { return "error"}
-    if dayInt >= 10 {
-        return day + " " + "(" + weekDay + ")"
-    } else {
+    guard let dayInt = Int(String(newDay)) else { logger("error"); return "error"}
+    
+    if dayInt < 10 {
         _ = day.removeFirst()
-        return day + " " + "(" + weekDay + ")"
     }
+    print("day :",day, "weekDay :", weekDay)
+    return day + " " + "(" + weekDay + ")"
     
 }
 
 // 테이블 뷰 castTime 만들기
 func makeCastTimeLabelStr(inputStr: String) -> String {
+    // // Sun 2019-06-16 18:00:00 에서 18:00 만 가져옴
     let splitDateArr = inputStr.split(separator: " ")
     let forSplitSecond = splitDateArr[2].split(separator: ":")
     
@@ -147,7 +154,8 @@ func makeCastTimeLabelStr(inputStr: String) -> String {
 
 
 func changeNumberFormatAndReturnString(numberStr: String?) -> String? {
-    
+    // 26.70 이면 26.7
+    // 26.00 이면 26 으로 출력하기
     guard let numberStr = numberStr else {
         print("changeNumberFormatAndReturnString 에 매개변수가 nil 들어옵니다")
         return "에러"
