@@ -31,7 +31,7 @@ final class WeatherCasterView: UIView {
     $0.effect = UIBlurEffect(style: .dark)
   }
   
-  private let topInfoView = UIView()
+let topInfoView = UIView()
   private let locationLabel = UILabel().then {
     $0.textColor = .white
     $0.textAlignment = .center

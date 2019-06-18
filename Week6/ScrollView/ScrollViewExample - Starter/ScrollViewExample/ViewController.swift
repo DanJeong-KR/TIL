@@ -35,6 +35,7 @@ final class ViewController: UIViewController {
     
     scrollView.delegate = self
     updateScrollViewZoomScale()
+    print("contentSize :", scrollView.contentSize)
     
   }
     

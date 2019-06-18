@@ -72,6 +72,7 @@ final class ForecastService: ForecastServiceType {
         else { return completionHandler(.failure(.invalidStatusCode)) }
       guard let data = data else { return completionHandler(.failure(.noData)) }
       
+        // 데이터 파싱 시작.
       guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
         let weather = json["weather"] as? [String: Any],
         let forecast3days = (weather["forecast3days"] as? [[String: Any]])?.first,

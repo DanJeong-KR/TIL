@@ -21,7 +21,6 @@ protocol ForecastServiceType {
     longitude: Double,
     completionHandler: @escaping (Result<[ShortRangeForecast], ServiceError>) -> Void
   )
-    
     // Result : 에러 핸들링에서 Completion 핸들러 만드는 거 대신에 요걸로 쓰면되는 최신 문법
 }
 

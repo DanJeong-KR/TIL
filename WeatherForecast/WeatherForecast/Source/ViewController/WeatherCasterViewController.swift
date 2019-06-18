@@ -313,7 +313,6 @@ extension WeatherCasterViewController: UITableViewDataSource {
         let imageName = "SKY_" + forecast.skyCode.dropFirst(5)
         
         // 29  소수점 안나오게 하기. %.0f 는 소수점없 / %.1f 소수점 1자리
-        // 이거 기록해놓자.
         let temp = String(format: "%.0f°", forecast.temperature)
         cell.configureCell(
           date: date, time: time, imageName: imageName, temperature: temp
@@ -335,7 +334,7 @@ extension WeatherCasterViewController: UITableViewDelegate {
       return 80
     }
   }
-  
+    
     // 31. 스크롤 뷰 다룰 때 바뀌는 값이 offset 인것 기록.
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let topInset = scrollView.contentInset.top
