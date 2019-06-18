@@ -16,6 +16,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
     
+    
     var weather: Weather? {
         didSet {
             guard let weather = self.weather else { return print("weather 가 nil 임")}

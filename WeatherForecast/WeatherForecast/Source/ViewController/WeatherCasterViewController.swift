@@ -99,7 +99,6 @@ final class WeatherCasterViewController: UIViewController {
     rootView.tableView.dataSource = self
     rootView.tableView.delegate = self
   }
-  
     
     // 2. 이부분 메모해놓자. presentAlert 도 만들어놓자.
     // 3. 권한 요청하고 infoPlist 에서 Privacy - location when in use 에 내가 사용자에게 보낼 메세지 작성하기 까지
@@ -259,29 +258,21 @@ extension WeatherCasterViewController: CLLocationManagerDelegate {
       }
     }
   }
-    
-    
-    
-    
-    
-    
 }
-
 
 // MARK: - UITableViewDataSource
 // 24.
 extension WeatherCasterViewController: UITableViewDataSource {
+    
   func numberOfSections(in tableView: UITableView) -> Int {
     return ForecastType.allCases.count
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // section 이 2개이기 때문에  섹션에 따라 return 달리 해준다.
     if ForecastType.current.rawValue == section {
       return currentForecast == nil ? 0 : 1 // 데이터 받은 상태에 따라.
     } else {
-        // 기상 예보가 업데이트 되지 않는 문제가 발생했으면
-        // 현재 시간보다 그 전의 데이터가 오겠지? 그럼 부적절한 데이터일거야
-        // => 현재시간 이후의 데이터가 들어왔을 때에만 데이터에 표현하기
       return shortRangeForecastList?.count ?? 0
     }
   }

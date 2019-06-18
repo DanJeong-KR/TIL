@@ -7,16 +7,7 @@
 //
 
 import UIKit
-// 프로토콜은 형용사형, 그런느낌으로 네이밍한다.
-protocol Identifiable {
-  static var identifier: String { get }
-}
-// MARK: - 셀마다 id 값 셀 이름으로 자동으로 생성되도록
-extension Identifiable {
-  static var identifier: String {
-    return String(describing: self)
-  }
-}
+
 extension UITableViewCell: Identifiable { }
 
 

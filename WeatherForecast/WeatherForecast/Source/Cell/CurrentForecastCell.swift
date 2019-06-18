@@ -89,6 +89,7 @@ final class CurrentForecastCell: UITableViewCell {
   
     // 21 . 셀 설정하는 configure 기록해놓자.
     // 나는 property 옵저버로 했는데 이게 더 깔끔한 방법인 듯.
+    
   func configureCell(
     weatherImageName: String,
     weatherStatus: String,
