@@ -24,12 +24,13 @@
 		521C409F22B2AA46009504B1 /* WeatherCasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C409E22B2AA46009504B1 /* WeatherCasterView.swift */; };
 		521C40A122B2AA6A009504B1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40A022B2AA6A009504B1 /* UIViewExtensions.swift */; };
 		521C40A322B2AAA0009504B1 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40A222B2AAA0009504B1 /* Then.swift */; };
-		521C40A822B2BCBF009504B1 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40A722B2BCBF009504B1 /* UIButtonExtensions.swift */; };
+		521C40A822B2BCBF009504B1 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40A722B2BCBF009504B1 /* UIControlExtensions.swift */; };
 		521C40AB22B2BE69009504B1 /* CurrentForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40AA22B2BE69009504B1 /* CurrentForecastCell.swift */; };
 		521C40AD22B2BF0F009504B1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40AC22B2BF0F009504B1 /* StringExtensions.swift */; };
-		521C40AF22B2BFFA009504B1 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40AE22B2BFFA009504B1 /* UITableViewExtensions.swift */; };
+		521C40AF22B2BFFA009504B1 /* TableViewCollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40AE22B2BFFA009504B1 /* TableViewCollectionViewExtensions.swift */; };
 		521C40B122B2C57A009504B1 /* ShortRangeForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C40B022B2C57A009504B1 /* ShortRangeForecastCell.swift */; };
 		8E20FF9822B8CCDB00AD02FE /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FF9722B8CCDB00AD02FE /* Identifiable.swift */; };
+		8E20FF9A22B9D67500AD02FE /* CGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FF9922B9D67500AD02FE /* CGExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,12 +53,13 @@
 		521C409E22B2AA46009504B1 /* WeatherCasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCasterView.swift; sourceTree = "<group>"; };
 		521C40A022B2AA6A009504B1 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		521C40A222B2AAA0009504B1 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		521C40A722B2BCBF009504B1 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		521C40A722B2BCBF009504B1 /* UIControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
 		521C40AA22B2BE69009504B1 /* CurrentForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentForecastCell.swift; sourceTree = "<group>"; };
 		521C40AC22B2BF0F009504B1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		521C40AE22B2BFFA009504B1 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		521C40AE22B2BFFA009504B1 /* TableViewCollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCollectionViewExtensions.swift; sourceTree = "<group>"; };
 		521C40B022B2C57A009504B1 /* ShortRangeForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortRangeForecastCell.swift; sourceTree = "<group>"; };
 		8E20FF9722B8CCDB00AD02FE /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		8E20FF9922B9D67500AD02FE /* CGExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				521C408722B291CF009504B1 /* FrameExtensions.swift */,
+				8E20FF9922B9D67500AD02FE /* CGExtensions.swift */,
 				521C409922B297C1009504B1 /* DecodableExtensions.swift */,
 				521C40A022B2AA6A009504B1 /* UIViewExtensions.swift */,
-				521C40A722B2BCBF009504B1 /* UIButtonExtensions.swift */,
-				521C40AE22B2BFFA009504B1 /* UITableViewExtensions.swift */,
+				521C40A722B2BCBF009504B1 /* UIControlExtensions.swift */,
+				521C40AE22B2BFFA009504B1 /* TableViewCollectionViewExtensions.swift */,
 				8E20FF9722B8CCDB00AD02FE /* Identifiable.swift */,
 				521C40AC22B2BF0F009504B1 /* StringExtensions.swift */,
 				521C40A222B2AAA0009504B1 /* Then.swift */,
@@ -273,8 +276,9 @@
 				521C409622B29571009504B1 /* ForecastService.swift in Sources */,
 				521C409822B29577009504B1 /* ForecastServiceType.swift in Sources */,
 				8E20FF9822B8CCDB00AD02FE /* Identifiable.swift in Sources */,
+				8E20FF9A22B9D67500AD02FE /* CGExtensions.swift in Sources */,
 				521C408F22B2946C009504B1 /* SampleData.swift in Sources */,
-				521C40AF22B2BFFA009504B1 /* UITableViewExtensions.swift in Sources */,
+				521C40AF22B2BFFA009504B1 /* TableViewCollectionViewExtensions.swift in Sources */,
 				521C409422B29567009504B1 /* ForecastServiceStub.swift in Sources */,
 				521C400622AF4559009504B1 /* WeatherCasterViewController.swift in Sources */,
 				521C408B22B29453009504B1 /* ForecastType.swift in Sources */,
@@ -286,7 +290,7 @@
 				521C408D22B2945B009504B1 /* CurrentForecast.swift in Sources */,
 				521C40B122B2C57A009504B1 /* ShortRangeForecastCell.swift in Sources */,
 				521C40AB22B2BE69009504B1 /* CurrentForecastCell.swift in Sources */,
-				521C40A822B2BCBF009504B1 /* UIButtonExtensions.swift in Sources */,
+				521C40A822B2BCBF009504B1 /* UIControlExtensions.swift in Sources */,
 				521C40A322B2AAA0009504B1 /* Then.swift in Sources */,
 				521C409A22B297C1009504B1 /* DecodableExtensions.swift in Sources */,
 			);

@@ -68,6 +68,9 @@ final class WeatherCasterViewController: UIViewController {
     super.viewDidLoad()
     configureLocationManager()
     configureViews()
+    
+    
+    
   }
   
     
@@ -280,6 +283,7 @@ extension WeatherCasterViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // CurrentForecastCell
     if ForecastType.current.rawValue == indexPath.section {
+        
       let cell = tableView.dequeue(CurrentForecastCell.self)
       
       if let current = currentForecast {

@@ -12,6 +12,8 @@ import Foundation
 
 /// 현재 기상예보 - 1시간 단위
 // Codable 객체 만들기 기록
+
+
 struct CurrentForecast: Decodable, CustomStringConvertible {
   let grid: Grid
   let wind: Wind
@@ -21,16 +23,6 @@ struct CurrentForecast: Decodable, CustomStringConvertible {
   let humidity: String
   let sunRiseTime: String
   let sunSetTime: String
-  
-  private enum CodingKeys: String, CodingKey {
-    case weather
-  }
-  private enum WeatherKeys: String, CodingKey {
-    case hourly
-  }
-  private enum HourlyKeys: String, CodingKey {
-    case grid, wind, precipitation, sky, temperature, humidity, sunRiseTime, sunSetTime
-  }
   
   struct Grid: Decodable {
     let city: String
@@ -54,15 +46,28 @@ struct CurrentForecast: Decodable, CustomStringConvertible {
     let tmax: String
     let tmin: String
   }
+    private enum CodingKeys: String, CodingKey {
+        case weather
+    }
+    private enum WeatherKeys: String, CodingKey {
+        case hourly
+    }
+    private enum HourlyKeys: String, CodingKey {
+        case grid, wind, precipitation, sky, temperature, humidity, sunRiseTime, sunSetTime
+    }
   
   init(from decoder: Decoder) throws {
+    
     let container = try decoder.container(keyedBy: CodingKeys.self)
+    
     let weather = try container.nestedContainer(keyedBy: WeatherKeys.self, forKey: .weather)
-    // 배열 뺄 떄 nestedUnkeyedContainer 쓰기
+    
     var hourlyArr = try weather.nestedUnkeyedContainer(forKey: .hourly)
+    
     let data = try hourlyArr.nestedContainer(keyedBy: HourlyKeys.self)
     
     grid = try data.decode(Grid.self, forKey: .grid)
+    
     wind = try data.decode(Wind.self, forKey: .wind)
     precipitation = try data.decode(Precipitation.self, forKey: .precipitation)
     sky = try data.decode(Sky.self, forKey: .sky)
@@ -85,4 +90,5 @@ struct CurrentForecast: Decodable, CustomStringConvertible {
     """
   }
 }
+
 

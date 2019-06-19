@@ -8,21 +8,8 @@
 
 import UIKit
 
-extension CGRect {
-  static var screenBounds: CGRect { return UIScreen.main.bounds }
-  
-    // 프레임으로 UI 잡을 때 make 만으로 
-  static func make(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
-    return CGRect(x: x, y: y, width: width, height: height)
-  }
-}
 
-extension CGFloat {
-  public static let screenWidth = UIScreen.main.nativeBounds.size.width  / UIScreen.main.nativeScale
-  public static let screenHeight = UIScreen.main.nativeBounds.size.height / UIScreen.main.nativeScale
-}
-
-// MARK: - frame 기반에서 UI 설정하기 쉽게 한다.
+// MARK: - frame 기반에서 UI 설정하기 쉽게 하기
 extension UIView {
   var x: CGFloat {
      // self.x 로 쓰면되

@@ -38,7 +38,8 @@ final class ForecastService: ForecastServiceType {
         (200..<300) ~= header.statusCode
         else { return completionHandler(.failure(.invalidStatusCode)) }
       guard let data = data else { return completionHandler(.failure(.noData)) }
-      
+        
+        
       if let currentForecast = try? CurrentForecast.decode(from: data) {
         completionHandler(.success(currentForecast))
       } else {
