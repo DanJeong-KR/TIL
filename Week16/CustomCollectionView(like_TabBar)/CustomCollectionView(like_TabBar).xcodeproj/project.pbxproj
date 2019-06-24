@@ -16,9 +16,9 @@
 		8E20FFC322BA01BC00AD02FE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFC222BA01BC00AD02FE /* MenuCell.swift */; };
 		8E20FFC522BA02BF00AD02FE /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFC422BA02BF00AD02FE /* Identifiable.swift */; };
 		8E20FFC722BA02CE00AD02FE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFC622BA02CD00AD02FE /* Logger.swift */; };
-		8E20FFC922BA109D00AD02FE /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFC822BA109D00AD02FE /* Protocol.swift */; };
 		8E20FFCB22BA1A0000AD02FE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFCA22BA1A0000AD02FE /* MenuView.swift */; };
 		8E20FFCD22BA3A8900AD02FE /* CollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFCC22BA3A8900AD02FE /* CollectionViewExtensions.swift */; };
+		8E20FFD022BB5F2F00AD02FE /* MenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20FFCF22BB5F2F00AD02FE /* MenuBarDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		8E20FFC222BA01BC00AD02FE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		8E20FFC422BA02BF00AD02FE /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		8E20FFC622BA02CD00AD02FE /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		8E20FFC822BA109D00AD02FE /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8E20FFCA22BA1A0000AD02FE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8E20FFCC22BA3A8900AD02FE /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
+		8E20FFCF22BB5F2F00AD02FE /* MenuBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +88,8 @@
 		8E20FFBC22B9FCB000AD02FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8E20FFBE22B9FD4000AD02FE /* MenuBarView.swift */,
-				8E20FFC222BA01BC00AD02FE /* MenuCell.swift */,
-				8E20FFCA22BA1A0000AD02FE /* MenuView.swift */,
+				8E20FFD122BB5F4C00AD02FE /* MenuView */,
+				8E20FFCE22BB5E7200AD02FE /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,15 +97,57 @@
 		8E20FFBD22B9FCB400AD02FE /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				8E20FFC822BA109D00AD02FE /* Protocol.swift */,
-				8E20FFC622BA02CD00AD02FE /* Logger.swift */,
-				8E20FFCC22BA3A8900AD02FE /* CollectionViewExtensions.swift */,
-				8E20FFC022B9FFA900AD02FE /* UIViewExtension.swift */,
-				8E20FFC422BA02BF00AD02FE /* Identifiable.swift */,
+				8E20FFCF22BB5F2F00AD02FE /* MenuBarDelegate.swift */,
+				8E20FFD422BB5FA000AD02FE /* Helper */,
+				8E20FFD322BB5F8000AD02FE /* Extensions */,
 				8E20FFA722B9FC0E00AD02FE /* AppDelegate.swift */,
 				8E20FFB022B9FC1300AD02FE /* LaunchScreen.storyboard */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		8E20FFCE22BB5E7200AD02FE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8E20FFC222BA01BC00AD02FE /* MenuCell.swift */,
+			);
+			name = Cell;
+			path = "ㅊ디ㅣ";
+			sourceTree = "<group>";
+		};
+		8E20FFD122BB5F4C00AD02FE /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				8E20FFCA22BA1A0000AD02FE /* MenuView.swift */,
+				8E20FFD222BB5F5A00AD02FE /* MenuBarView */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		8E20FFD222BB5F5A00AD02FE /* MenuBarView */ = {
+			isa = PBXGroup;
+			children = (
+				8E20FFBE22B9FD4000AD02FE /* MenuBarView.swift */,
+			);
+			path = MenuBarView;
+			sourceTree = "<group>";
+		};
+		8E20FFD322BB5F8000AD02FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E20FFCC22BA3A8900AD02FE /* CollectionViewExtensions.swift */,
+				8E20FFC022B9FFA900AD02FE /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E20FFD422BB5FA000AD02FE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8E20FFC622BA02CD00AD02FE /* Logger.swift */,
+				8E20FFC422BA02BF00AD02FE /* Identifiable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,12 +223,12 @@
 				8E20FFC122B9FFA900AD02FE /* UIViewExtension.swift in Sources */,
 				8E20FFC522BA02BF00AD02FE /* Identifiable.swift in Sources */,
 				8E20FFC322BA01BC00AD02FE /* MenuCell.swift in Sources */,
-				8E20FFC922BA109D00AD02FE /* Protocol.swift in Sources */,
 				8E20FFCB22BA1A0000AD02FE /* MenuView.swift in Sources */,
 				8E20FFBA22B9FC8200AD02FE /* CustomTabBarViewController.swift in Sources */,
 				8E20FFC722BA02CE00AD02FE /* Logger.swift in Sources */,
 				8E20FFA822B9FC0E00AD02FE /* AppDelegate.swift in Sources */,
 				8E20FFCD22BA3A8900AD02FE /* CollectionViewExtensions.swift in Sources */,
+				8E20FFD022BB5F2F00AD02FE /* MenuBarDelegate.swift in Sources */,
 				8E20FFBF22B9FD4000AD02FE /* MenuBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Melon</key>
+	<dict>
+		<key>2018년</key>
+		<array>
+			<string>iKON - 사랑을 했다 (LOVE SCENARIO)</string>
+			<string>장덕철 - 그날처럼</string>
+			<string>폴킴 - 모든 날, 모든 순간 (Every day, Every Moment)</string>
+			<string>닐로 (Nilo) - 지나오다</string>
+			<string>모모랜드 (MOMOLAND) - 뿜뿜</string>
+			<string>BLACKPINK - 뚜두뚜두 (DDU-DU DDU-DU)</string>
+			<string>멜로망스 - 선물</string>
+			<string>숀 (SHAUN) - Way Back HOME</string>
+			<string>로이킴 - 그때 헤어지면 돼</string>
+			<string>볼빨간사춘기 - 여행</string>
+		</array>
+		<key>2017년</key>
+		<array>
+			<string>에일리 - 첫눈처럼 너에게 가겠다</string>
+			<string>아이유 - 밤편지</string>
+			<string>윤종신 - 좋니</string>
+			<string>볼빨간사춘기 - 좋다고 말해</string>
+			<string>마크툽 (MAKTUB), 구윤희 - Marry Me</string>
+			<string>헤이즈 (Heize) - 비도 오고 그래서 (Feat. 신용재)</string>
+			<string>아이유 - 팔레트 (Feat. G-DRAGON)</string>
+			<string>Crush - Beautiful</string>
+			<string>SURAN (수란) - 오늘 취하면 (Feat. 창모)</string>
+			<string>TWICE (트와이스) - KNOCK KNOCK</string>
+		</array>
+	</dict>
+</dict>
+</plist>

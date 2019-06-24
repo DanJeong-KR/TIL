@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TT6-Gq-Cqy">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Uev-3M-6RD">
+            <objects>
+                <viewController id="TT6-Gq-Cqy" customClass="ViewController" customModule="SandboxDirectoryExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8o1-uV-7Fu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-oD-rgP" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-Rn-rA4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  [ Directory ]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imj-Mq-e8a">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="A2Q-fg-coj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iJI-0E-1Ys">
+                                                <rect key="frame" x="0.0" y="30" width="414" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY1-TG-45Q">
+                                                        <rect key="frame" x="0.0" y="5" width="63.5" height="30"/>
+                                                        <state key="normal" title="Bundle"/>
+                                                        <connections>
+                                                            <action selector="printBundleDirectory:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="5Nh-G1-QFa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbN-IC-A67">
+                                                        <rect key="frame" x="68.5" y="5" width="104.5" height="30"/>
+                                                        <state key="normal" title="Documents"/>
+                                                        <connections>
+                                                            <action selector="printDocumentsDirectory:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="F8R-nD-vSv"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2D-0a-5ig">
+                                                        <rect key="frame" x="178" y="5" width="111" height="30"/>
+                                                        <state key="normal" title="AppSupport"/>
+                                                        <connections>
+                                                            <action selector="printApplicationSupportDirectory:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="vCl-XI-lHH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxM-Ea-pf0">
+                                                        <rect key="frame" x="294" y="5" width="58.5" height="30"/>
+                                                        <state key="normal" title="Cache"/>
+                                                        <connections>
+                                                            <action selector="printCachesDirectory:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="WLS-i6-e1r"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNJ-5e-OZb">
+                                                        <rect key="frame" x="357.5" y="5" width="56.5" height="30"/>
+                                                        <state key="normal" title="Temp"/>
+                                                        <connections>
+                                                            <action selector="printTemporaryDirectory:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="XUf-w5-osz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="b9U-VN-6u9"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aad-nP-HeW">
+                                                <rect key="frame" x="0.0" y="70" width="414" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="BFh-zw-JYz"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  [ File Handling ]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KX-AB-DZw">
+                                                <rect key="frame" x="0.0" y="80" width="414" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="bJc-PK-dXR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="76U-ZO-vP6">
+                                                <rect key="frame" x="0.0" y="110" width="414" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unN-y2-6U5" userLabel="Bundle File">
+                                                        <rect key="frame" x="0.0" y="5" width="100" height="30"/>
+                                                        <state key="normal" title="BundleFile"/>
+                                                        <connections>
+                                                            <action selector="bundleFile:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="8OV-Co-xfR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1p-xg-7iS">
+                                                        <rect key="frame" x="105" y="5" width="99.5" height="30"/>
+                                                        <state key="normal" title="Update"/>
+                                                        <connections>
+                                                            <action selector="updateFileData:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="vhx-Qu-PX2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqZ-2j-CzY">
+                                                        <rect key="frame" x="209.5" y="5" width="100" height="30"/>
+                                                        <state key="normal" title="Save"/>
+                                                        <connections>
+                                                            <action selector="saveFile:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="JYp-Ol-34U"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS4-2b-vf9">
+                                                        <rect key="frame" x="314.5" y="5" width="99.5" height="30"/>
+                                                        <state key="normal" title="Load"/>
+                                                        <connections>
+                                                            <action selector="loadFile:" destination="TT6-Gq-Cqy" eventType="touchUpInside" id="lVw-K6-dIq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="wMR-Eo-1IX"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9yu-Rn-rA4" firstAttribute="leading" secondItem="XLY-oD-rgP" secondAttribute="leading" id="1av-22-k6i"/>
+                                    <constraint firstItem="9yu-Rn-rA4" firstAttribute="top" secondItem="XLY-oD-rgP" secondAttribute="top" id="eBJ-Xy-78F"/>
+                                    <constraint firstAttribute="trailing" secondItem="9yu-Rn-rA4" secondAttribute="trailing" id="jbQ-Qc-vge"/>
+                                    <constraint firstAttribute="bottom" secondItem="9yu-Rn-rA4" secondAttribute="bottom" id="zUX-d3-15t"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8aw-Ni-VK2">
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="qJt-62-FCd" detailTextLabel="eSW-iJ-DSI" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="DgP-VG-Bjo">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DgP-VG-Bjo" id="swJ-nI-zoz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qJt-62-FCd">
+                                                    <rect key="frame" x="20" y="13" width="35" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eSW-iJ-DSI">
+                                                    <rect key="frame" x="20" y="37.5" width="38" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TT6-Gq-Cqy" id="apm-7v-D3Q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LmN-zR-02J" firstAttribute="trailing" secondItem="8aw-Ni-VK2" secondAttribute="trailing" id="Ezt-J7-otl"/>
+                            <constraint firstItem="8aw-Ni-VK2" firstAttribute="leading" secondItem="LmN-zR-02J" secondAttribute="leading" id="NWe-hi-RNC"/>
+                            <constraint firstItem="8aw-Ni-VK2" firstAttribute="top" secondItem="XLY-oD-rgP" secondAttribute="bottom" id="O25-n0-i6h"/>
+                            <constraint firstItem="XLY-oD-rgP" firstAttribute="top" secondItem="LmN-zR-02J" secondAttribute="top" id="XN4-bc-Q3d"/>
+                            <constraint firstItem="XLY-oD-rgP" firstAttribute="leading" secondItem="LmN-zR-02J" secondAttribute="leading" id="c13-hL-K44"/>
+                            <constraint firstItem="XLY-oD-rgP" firstAttribute="trailing" secondItem="LmN-zR-02J" secondAttribute="trailing" id="pBj-Y2-qO2"/>
+                            <constraint firstItem="LmN-zR-02J" firstAttribute="bottom" secondItem="8aw-Ni-VK2" secondAttribute="bottom" id="vpb-b8-GRm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LmN-zR-02J"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8aw-Ni-VK2" id="RvQ-8Z-AE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GyZ-Tu-o7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853.62318840579712" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
