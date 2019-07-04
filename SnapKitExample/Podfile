@@ -1,0 +1,9 @@
+platform :ios, '12.0'
+
+target 'SnappyQuiz' do
+  use_frameworks!
+  inhibit_all_warnings!
+  swift_version = '5.0'
+
+  pod 'SnapKit'
+end

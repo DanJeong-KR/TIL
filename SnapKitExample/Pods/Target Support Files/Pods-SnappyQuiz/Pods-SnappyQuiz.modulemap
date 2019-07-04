@@ -1,0 +1,6 @@
+framework module Pods_SnappyQuiz {
+  umbrella header "Pods-SnappyQuiz-umbrella.h"
+
+  export *
+  module * { export * }
+}
