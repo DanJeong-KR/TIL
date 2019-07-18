@@ -20,7 +20,7 @@ class MenuView: UIView {
         cv.backgroundColor = .white
         return cv
     }()
-
+  
     let menuBarView = MenuBarView()
     
     override init(frame: CGRect) {
@@ -102,7 +102,9 @@ extension MenuView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     
     // MARK: - Delegate
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         logger(targetContentOffset.pointee, velocity)
         let itemAt = Int(targetContentOffset.pointee.x / self.frame.width)
         menuBarView.menuCollectionView.selectItem(at: IndexPath(item: itemAt, section: 0), animated: true, scrollPosition: .centeredHorizontally)
@@ -113,8 +115,6 @@ extension MenuView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         // 계속 도는 애니까 애니메이션 처럼 보인다.
         menuBarView.indicatorBarLeadingConstraint.constant = scrollView.contentOffset.x / CGFloat(menuTitles.count)
     }
-    
-    
 }
 
 extension MenuView: MenuBarDelegate {

@@ -15,7 +15,7 @@ class CustomTabBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         view.addSubviews([menuView])
         menuView.menuBarView.menuCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
         
