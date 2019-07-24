@@ -15,7 +15,7 @@ class FeedManager {
     
     private init() { }
     
-    private var feedDatas: [FeedData] = [FeedData(profileImage: nil, nikName: nil, feedImage: UIImage(named: "feedImage2"), myStory: "gggg")]
+    private var feedDatas:  [FeedData] = [FeedData(profileImage: nil, nikName: nil, feedImage: UIImage(named: "feedImage2"), myStory: "")]
     
     func getFeedDatas() -> [FeedData] {
         return feedDatas
